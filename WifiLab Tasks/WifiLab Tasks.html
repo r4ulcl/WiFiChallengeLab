@@ -76,6 +76,12 @@
 		p, h1, h2, h3, h4, h5, h6, ul, table {
 			margin-top: .6em;
 			margin-bottom: .65em;
+
+			/*
+				Adds support for RTL text in the note body. It automatically detects the direction using the content.
+				Issue: https://github.com/laurent22/joplin/issues/3991
+			*/
+			unicode-bidi: plaintext;
 		}
 		h1, h2, h3, h4, h5, h6 {
 			line-height: 1.5em;
@@ -122,10 +128,11 @@
 			margin-top: 0.2em;
 			margin-bottom: 0;
 		}
+
 		.resource-icon {
 			display: inline-block;
 			position: relative;
-			top: .5em;
+			top: 0.3em;
 			text-decoration: none;
 			width: 1.2em;
 			height: 1.4em;
@@ -297,6 +304,11 @@
 			display: none;
 		}
 
+		mark {
+			background: #F7D26E;
+			color: black;
+		}
+
 		/* =============================================== */
 		/* For TinyMCE */
 		/* =============================================== */
@@ -416,7 +428,62 @@
 					content:"\f0c8";
 				}
 .mermaid { background-color: white; width: 640px; }</style><div id="rendered-md"><h1 id="wifilab-tasks">WifiLab Tasks</h1>
-<nav class="table-of-contents"><ul><li><a href="#wifilab-tasks">WifiLab Tasks</a><ul><li><a href="#introduction">Introduction</a><ul><li><a href="#important-intrucctions">IMPORTANT INTRUCCTIONS</a></li><li><a href="#scope">Scope</a></li><li><a href="#references">References</a></li></ul></li><li><a href="#recon">Recon</a><ul><li><a href="#list-all-client-macs">List all client MACs</a></li><li><a href="#detect-aps-information">Detect APs information</a></li><li><a href="#get-probes-from-all-users">Get probes from all users</a></li><li><a href="#find-hidden-network-essid">Find hidden network ESSID</a></li></ul></li><li><a href="#open">Open</a><ul><li><a href="#access-to-wifi-guest-network">Access to wifi-guest network</a></li><li><a href="#login-to-the-server-with-users-password">Login to the server with users password</a></li><li><a href="#verify-client-isolation">Verify Client isolation</a></li></ul></li><li><a href="#wep">WEP</a><ul><li><a href="#get-hidden-wifi-password">Get hidden wifi password</a></li></ul></li><li><a href="#psk">PSK</a><ul><li><a href="#get-wifi-moviles-password">Get wifi-moviles password</a></li><li><a href="#get-users-login-traffic-passively">Get users login traffic passively</a></li><li><a href="#login-with-stolen-creds">Login with stolen creds</a></li><li><a href="#get-wifi-oficina-ap-password">Get wifi-oficina AP Password</a></li><li><a href="#get-wifi-admin-ap-password">Get wifi-admin AP password</a></li></ul></li><li><a href="#mgt">MGT</a><ul><li><a href="#get-users-login-ids-usernames">Get users login IDs (usernames)</a></li><li><a href="#get-cert-information">Get cert information</a></li><li><a href="#get-eap-methods-supported-by-ap">Get EAP methods supported by AP</a></li><li><a href="#get-first-user-password-of-wifi-corp">Get first USER password of wifi-corp</a></li><li><a href="#get-ca-from-the-router-using-default-creds">Get CA from the Router using default creds</a></li><li><a href="#get-second-user-password-using-the-ca">Get second USER password using the CA</a></li><li><a href="#creds-relay">Creds Relay</a></li><li><a href="#access-as-globaladminsitrator">Access as GLOBAL\Adminsitrator</a></li><li><a href="#login-to-wifi-global-administrator-web-creds">Login to wifi-global Administrator web creds</a></li></ul></li></ul></li></ul></nav><h2 id="introduction">Introduction</h2>
+<ul>
+<li><a data-from-md title='#wifilab-tasks' href='#wifilab-tasks'>WifiLab Tasks</a>
+<ul>
+<li><a data-from-md title='#introduction' href='#introduction'>Introduction</a>
+<ul>
+<li><a data-from-md title='#important-intrucctions' href='#important-intrucctions'>IMPORTANT INTRUCCTIONS</a></li>
+<li><a data-from-md title='#scope' href='#scope'>Scope</a></li>
+<li><a data-from-md title='#references' href='#references'>References</a></li>
+</ul>
+</li>
+<li><a data-from-md title='#recon' href='#recon'>Recon</a>
+<ul>
+<li><a data-from-md title='#list-all-client-macs' href='#list-all-client-macs'>List all client MACs</a></li>
+<li><a data-from-md title='#detect-aps-information' href='#detect-aps-information'>Detect APs information</a></li>
+<li><a data-from-md title='#get-probes-from-all-users' href='#get-probes-from-all-users'>Get probes from all users</a></li>
+<li><a data-from-md title='#find-hidden-network-essid' href='#find-hidden-network-essid'>Find hidden network ESSID</a></li>
+</ul>
+</li>
+<li><a data-from-md title='#open' href='#open'>Open</a>
+<ul>
+<li><a data-from-md title='#access-to-wifi-guest-network' href='#access-to-wifi-guest-network'>Access to wifi-guest network</a></li>
+<li><a data-from-md title='#login-to-the-server-with-users-password' href='#login-to-the-server-with-users-password'>Login to the server with users password</a></li>
+<li><a data-from-md title='#verify-client-isolation' href='#verify-client-isolation'>Verify Client isolation</a></li>
+</ul>
+</li>
+<li><a data-from-md title='#wep' href='#wep'>WEP</a>
+<ul>
+<li><a data-from-md title='#get-hidden-wifi-password' href='#get-hidden-wifi-password'>Get hidden wifi password</a></li>
+</ul>
+</li>
+<li><a data-from-md title='#psk' href='#psk'>PSK</a>
+<ul>
+<li><a data-from-md title='#get-wifi-moviles-password' href='#get-wifi-moviles-password'>Get wifi-moviles password</a></li>
+<li><a data-from-md title='#get-users-login-traffic-passively' href='#get-users-login-traffic-passively'>Get users login traffic passively</a></li>
+<li><a data-from-md title='#login-with-stolen-creds' href='#login-with-stolen-creds'>Login with stolen creds</a></li>
+<li><a data-from-md title='#get-wifi-oficina-ap-password' href='#get-wifi-oficina-ap-password'>Get wifi-oficina AP Password</a></li>
+<li><a data-from-md title='#get-wifi-admin-ap-password' href='#get-wifi-admin-ap-password'>Get wifi-admin AP password</a></li>
+</ul>
+</li>
+<li><a data-from-md title='#mgt' href='#mgt'>MGT</a>
+<ul>
+<li><a data-from-md title='#get-users-login-ids-usernames' href='#get-users-login-ids-usernames'>Get users login IDs (usernames)</a></li>
+<li><a data-from-md title='#get-cert-information' href='#get-cert-information'>Get cert information</a></li>
+<li><a data-from-md title='#get-eap-methods-supported-by-ap' href='#get-eap-methods-supported-by-ap'>Get EAP methods supported by AP</a></li>
+<li><a data-from-md title='#get-first-user-password-of-wifi-corp' href='#get-first-user-password-of-wifi-corp'>Get first USER password of wifi-corp</a></li>
+<li><a data-from-md title='#get-ca-from-the-router-using-default-creds' href='#get-ca-from-the-router-using-default-creds'>Get CA from the Router using default creds</a></li>
+<li><a data-from-md title='#get-second-user-password-using-the-ca' href='#get-second-user-password-using-the-ca'>Get second USER password using the CA</a></li>
+<li><a data-from-md title='#creds-relay' href='#creds-relay'>Creds Relay</a></li>
+<li><a data-from-md title='#access-as-globaladminsitrator' href='#access-as-globaladminsitrator'>Access as GLOBAL\Adminsitrator</a></li>
+<li><a data-from-md title='#login-to-wifi-global-administrator-web-creds' href='#login-to-wifi-global-administrator-web-creds'>Login to wifi-global Administrator web creds</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="introduction">Introduction</h2>
 <h3 id="important-intrucctions">IMPORTANT INTRUCCTIONS</h3>
 <ul>
 <li>You can't see you own traffic with airodump-ng (if you have airodump and mount an AP you won't see it)</li>
@@ -430,8 +497,8 @@
 <li>To manage the VMs use the home scripts:
 <ul>
 <li>startVM.sh to start</li>
-<li>stopVM.sh to stop</li>
-<li>restartVM.sh to restart</li>
+<li>stopVM.sh to stop and restore</li>
+<li>restartVM.sh to restart and restore</li>
 </ul>
 </li>
 <li>All tools are in /root folder</li>
@@ -886,7 +953,7 @@
 </ul>
   </details><details class="jop-noMdConv"><summary class="jop-noMdConv">Hint 2</summary>
 <ul>
-<li><a data-from-md title='https://github.com/koutto/pi-pwnbox-rogueap/wiki/13.-WPA-WPA2-Enterprise-(MGT)-Rogue-AP-Evil-Twin#wpawpa2-enterprise-ap-evil-twin--eap-mschapv2-relay' href='https://github.com/koutto/pi-pwnbox-rogueap/wiki/13.-WPA-WPA2-Enterprise-(MGT)-Rogue-AP-Evil-Twin#wpawpa2-enterprise-ap-evil-twin--eap-mschapv2-relay'>https://github.com/koutto/pi-pwnbox-rogueap/wiki/13.-WPA-WPA2-Enterprise-(MGT)-Rogue-AP-Evil-Twin#wpawpa2-enterprise-ap-evil-twin--eap-mschapv2-relay</a></li>
+<li><a data-from-md title='https://github.com/koutto/pi-pwnbox-rogueap/wiki/13.-WPA-WPA2-Enterprise-(MGT)-Rogue-AP-Evil-Twin#wpawpa2-enterprise-ap-evil-twin--eap-mschapv2-relay' href='https://github.com/koutto/pi-pwnbox-rogueap/wiki/13.-WPA-WPA2-Enterprise-%28MGT%29-Rogue-AP-Evil-Twin#wpawpa2-enterprise-ap-evil-twin--eap-mschapv2-relay'>https://github.com/koutto/pi-pwnbox-rogueap/wiki/13.-WPA-WPA2-Enterprise-(MGT)-Rogue-AP-Evil-Twin#wpawpa2-enterprise-ap-evil-twin--eap-mschapv2-relay</a></li>
 </ul>
   </details><details class="jop-noMdConv"><summary class="jop-noMdConv">Hint 3</summary>
 <ul>

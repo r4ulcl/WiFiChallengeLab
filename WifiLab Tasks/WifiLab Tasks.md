@@ -51,7 +51,7 @@
 - All necessary tools for the lab are installed, but others can be installed.
 - Enable nested VT-x / AMD-V on Virtualbox host if not enabled
 
-![75003971b5d131f68cc1a2b21d2aafab.png](:/128cf79224ce452fad138b56734e93c6)
+![75003971b5d131f68cc1a2b21d2aafab.png](../_resources/128cf79224ce452fad138b56734e93c6.png)
 
 ### Scope
 
