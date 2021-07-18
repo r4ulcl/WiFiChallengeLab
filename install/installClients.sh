@@ -11,17 +11,17 @@ sudo make install
 cd ..
 
 cd /root
-wget -nH -r --no-parent http://10.0.2.2/certs
+wget -nH -r --no-parent http://10.0.2.15/certs
 
 # Download hostapd files wget
 cd /root
-wget -nH -r --no-parent http://10.0.2.2/pskClient/
+wget -nH -r --no-parent http://10.0.2.15/pskClient/
 
 cd /root
-wget -nH -r --no-parent http://10.0.2.2/mgtClient/
+wget -nH -r --no-parent http://10.0.2.15/mgtClient/
 
 cd /root
-wget -nH -r --no-parent http://10.0.2.2/openClient/
+wget -nH -r --no-parent http://10.0.2.15/openClient/
 
 # Config autoStart
 echo '#!/bin/sh -e
@@ -33,11 +33,15 @@ exit 0
 chmod 755 /etc/rc.local
 
 cd /root
-wget 10.0.2.2/startClients.sh
+wget 10.0.2.15/startClients.sh
 chmod +x /root/startClients.sh
 
-wget 10.0.2.2/cronClients.sh
+wget 10.0.2.15/cronClients.sh
 chmod +x /root/cronClients.sh
+
+cd /root
+wget 10.0.2.15/checkVWIFI.sh
+chmod +x /root/checkVWIFI.sh
 
 export PATH=$PATH:/sbin
 

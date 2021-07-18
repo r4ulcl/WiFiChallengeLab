@@ -36,22 +36,22 @@ make install
 
 # Hostapd config PSK!!
 cd /root
-wget -nH -r --no-parent http://10.0.2.2/psk/
+wget -nH -r --no-parent http://10.0.2.15/psk/
 
 # Open
 cd /root
-wget -nH -r --no-parent http://10.0.2.2/open/
+wget -nH -r --no-parent http://10.0.2.15/open/
 
 # WEP
 cd /root
-wget -nH -r --no-parent http://10.0.2.2/wep/
+wget -nH -r --no-parent http://10.0.2.15/wep/
 
 # MGT
 cd /root
-wget -nH -r --no-parent http://10.0.2.2/mgt/
+wget -nH -r --no-parent http://10.0.2.15/mgt/
 
 cd /root/mgt/
-wget -nH -r --no-parent http://10.0.2.2/certs
+wget -nH -r --no-parent http://10.0.2.15/certs
 cd certs
 make install
 
@@ -85,14 +85,18 @@ exit 0
 chmod 755 /etc/rc.local
 
 cd /root
-wget 10.0.2.2/startAPs.sh
+wget 10.0.2.15/startAPs.sh
 chmod +x /root/startAPs.sh
+
+cd /root
+wget 10.0.2.15/checkVWIFI.sh
+chmod +x /root/checkVWIFI.sh
 
 export PATH=$PATH:/sbin
 
 cd /var/www/
 rm -r html
-wget -nH -r --no-parent http://10.0.2.2/html/
+wget -nH -r --no-parent http://10.0.2.15/html/
 
 # CA To web
 mkdir  /var/www/html/secretCA

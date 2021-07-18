@@ -9,7 +9,7 @@ I've used "debian-10.9.0-amd64-netinst.iso"
         - VM Debian clients
 - Allow nest VT-x/AMD-v in the HOST VM
     
-- To avoid IP problems create new NAT on other range in HOST 10.1.2.0/24
+- Set the nested VM in Bridge mode to share IP range. 
     
 - You can create one Debian VM and clone it.
 
@@ -30,20 +30,21 @@ To get the scripts the best way is to mount an HTTP server in the VM Host with:
 
 ```bash
 cd /root/WifiLab/install
-python -m SimpleHTTPServer 80
+sudo service apache2 stop
+python3 -m http.server 80
 ```
 
 ## APs
 
 ```bash
-wget 10.0.2.2/installAPs.sh
+wget 10.0.2.15/installAPs.sh
 bash installAP.sh
 ```
 
 ## Clients
 
 ```bash
-wget 10.0.2.2/installClients.sh
+wget 10.0.2.15/installClients.sh
 bash installClients.sh
 
 ```

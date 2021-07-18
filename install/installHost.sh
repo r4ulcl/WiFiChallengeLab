@@ -10,7 +10,7 @@ for i in "${arr[@]}"
 do
 	chmod +x $i
 	cp $i /root/
-	chown user $i
+	sudo chown user $i
 	cp $i /home/user/
 done
 
@@ -34,6 +34,8 @@ apt install sudo iw macchanger aircrack-ng wireshark libcurl4-openssl-dev curl l
 apt install make g++ libnl-3-dev libnl-genl-3-dev -y
 apt install sl sqlitebrowser net-tools -y
 apt install hashcat -y
+apt install apache2 -y
+mkdir /var/www/html/ -p
 apt-get install wpasupplicant -y
 
 # Git vwifi
@@ -70,3 +72,4 @@ export PATH=$PATH:/sbin
 #echo 'xhost si:localuser:root' >>  /home/user/.bashrc
 
 systemctl stop lighttpd
+

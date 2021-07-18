@@ -19,7 +19,7 @@ macchanger -m F0:9F:C2:71:22:77 wlan7 #TLS
 macchanger -m F0:9F:C2:71:22:88 wlan8 #Hdden
 macchanger -m F0:9F:C2:71:22:99 wlan9 #WPS
 
-vwifi-client 10.0.2.2  > /root/vwifi-client.log &
+vwifi-client 10.0.2.15  > /root/vwifi-client.log &
 
 sleep 10
 
@@ -61,5 +61,7 @@ hostapd /root/wep/hostapd_wep_hidden.conf > /root/hostapd_wep_hidden.log &
 # PSK WPS
 ip addr add 192.168.9.1/24 dev wlan9
 hostapd /root/psk/hostapd_wps.conf > /root/hostapd_wps.log &
+
+bash /root/checkVWIFI.sh > /root/checkVWIFI.log &
 
 echo "ALL SET"

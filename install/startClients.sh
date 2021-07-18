@@ -22,7 +22,7 @@ macchanger -m B0:72:BF:44:B0:99 wlan9
 
 sleep 5
 
-vwifi-client 10.0.2.2 > /root/vwifi-client.log &
+vwifi-client 10.0.2.15 > /root/vwifi-client.log &
 
 sleep 15
 
@@ -57,5 +57,7 @@ ping 192.168.3.1 > /dev/nill &
 ping 192.168.4.1 > /dev/nill &
 
 bash /root/cronClients.sh > /root/cronClients.log &
+
+bash /root/checkVWIFI.sh > /root/checkVWIFI.log &
 
 echo "ALL SET"
