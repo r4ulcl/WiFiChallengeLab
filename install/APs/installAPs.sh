@@ -36,26 +36,28 @@ make install
 
 # Hostapd config PSK!!
 cd /root
-wget -nH -r --no-parent http://10.0.2.15/psk/
+wget -nH -r --no-parent http://10.0.2.15/APs/psk/
 
 # Open
 cd /root
-wget -nH -r --no-parent http://10.0.2.15/open/
+wget -nH -r --no-parent http://10.0.2.15/APs/open/
 
 # WEP
 cd /root
-wget -nH -r --no-parent http://10.0.2.15/wep/
+wget -nH -r --no-parent http://10.0.2.15/APs/wep/
 
 # MGT
 cd /root
-wget -nH -r --no-parent http://10.0.2.15/mgt/
+wget -nH -r --no-parent http://10.0.2.15/APs/mgt/
 
+mkdir /root/mgt/
 cd /root/mgt/
 wget -nH -r --no-parent http://10.0.2.15/certs
 cd certs
 make install
 
-
+cd
+cp APs/* . -r
 
 # DNSMASQ
 echo '
@@ -85,8 +87,8 @@ exit 0
 chmod 755 /etc/rc.local
 
 cd /root
-wget 10.0.2.15/startAPs.sh
-chmod +x /root/startAPs.sh
+wget 10.0.2.15/APs/startAPs.sh
+chmod +x /root/APs/startAPs.sh
 
 cd /root
 wget 10.0.2.15/checkVWIFI.sh
@@ -94,12 +96,13 @@ chmod +x /root/checkVWIFI.sh
 
 export PATH=$PATH:/sbin
 
-cd /var/www/
-rm -r html
-wget -nH -r --no-parent http://10.0.2.15/html/
+cd 
+rm -r /var/www/html
+wget -nH -r --no-parent http://10.0.2.15/APs/html/
+cp -r APs/html/ /var/www/
 
 # CA To web
-mkdir  /var/www/html/secretCA
+mkdir -p  /var/www/html/secretCA/
 cp /root/mgt/certs/ca.crt /var/www/html/secretCA/ca.crt.txt
 split -l 15  /root/mgt/certs/ca.key /var/www/html/secretCA/ca.key.txt. -a1
 cp /root/mgt/certs/ca.serial /var/www/html/secretCA/ca.serial.txt

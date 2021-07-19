@@ -16,18 +16,25 @@ done
 
 cp WifiLab.ova /home/user/
 chown user /home/user/WifiLab.ova
+
+chmod 777 debian-10.9.0-amd64-netinst.iso
+mv debian-10.9.0-amd64-netinst.iso /home/user/
+
 # Install VBox guest additions
 #apt install build-essential dkms linux-headers-$(uname -r) -y
 #sh /media/cdrom/VBoxLinuxAdditions.run
 
 # Install virtualbox
-wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
-echo "deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian bionic contrib" | sudo tee /etc/apt/sources.list.d/virtualbox.list
-sudo apt update
-sudo apt install virtualbox-6.1 -y
+#wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
+#echo "deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian bionic contrib" | sudo tee /etc/apt/sources.list.d/virtualbox.list
+#sudo apt update
+#sudo apt install virtualbox-6.1 -y
 #wget https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-10.10.0-amd64-netinst.iso
-lechmod 777 debian-10.9.0-amd64-netinst.iso
-mv debian-10.9.0-amd64-netinst.iso /home/user/
+cd 
+wget https://download.virtualbox.org/virtualbox/6.1.22/virtualbox-6.1_6.1.22-144080~Debian~buster_amd64.deb
+sudo dpkg -i virtualbox-6.1_6.1.22-144080~Debian~buster_amd64.deb
+apt --fix-broken install
+
 
 # Dependencies
 apt install sudo iw macchanger aircrack-ng wireshark libcurl4-openssl-dev curl libz-dev module-assistant libssl-dev libnl-genl-3-dev libnl-3-dev pkg-config libsqlite3-dev git -y

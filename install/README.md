@@ -37,14 +37,14 @@ python3 -m http.server 80
 ## APs
 
 ```bash
-wget 10.0.2.15/installAPs.sh
+wget 10.0.2.15/APs/installAPs.sh
 bash installAP.sh
 ```
 
 ## Clients
 
 ```bash
-wget 10.0.2.15/installClients.sh
+wget 10.0.2.15/Clients/installClients.sh
 bash installClients.sh
 
 ```

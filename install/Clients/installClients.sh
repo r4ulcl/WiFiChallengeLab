@@ -15,13 +15,15 @@ wget -nH -r --no-parent http://10.0.2.15/certs
 
 # Download hostapd files wget
 cd /root
-wget -nH -r --no-parent http://10.0.2.15/pskClient/
+wget -nH -r --no-parent http://10.0.2.15/Clients/pskClient/
 
 cd /root
-wget -nH -r --no-parent http://10.0.2.15/mgtClient/
+wget -nH -r --no-parent http://10.0.2.15/Clients/mgtClient/
 
 cd /root
-wget -nH -r --no-parent http://10.0.2.15/openClient/
+wget -nH -r --no-parent http://10.0.2.15/Clients/openClient/
+
+cp Clients/* . -r
 
 # Config autoStart
 echo '#!/bin/sh -e
@@ -33,10 +35,10 @@ exit 0
 chmod 755 /etc/rc.local
 
 cd /root
-wget 10.0.2.15/startClients.sh
+wget 10.0.2.15/Clients/startClients.sh
 chmod +x /root/startClients.sh
 
-wget 10.0.2.15/cronClients.sh
+wget 10.0.2.15/Clients/cronClients.sh
 chmod +x /root/cronClients.sh
 
 cd /root

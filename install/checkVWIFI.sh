@@ -10,7 +10,7 @@ do
 
 	#if last ID id is disconnected
 	#curl and grep ID 
-	DISC=`curl -s http://10.0.2.15/vwifi-server.log | grep $VID`
+	DISC=`curl -s http://10.0.2.15/vwifi-server.log | grep $VID | tail -n 1`
 
 	if [[ $DISC == *"disconnected"* ]]; then
 		PID=`pgrep vwifi-client`
