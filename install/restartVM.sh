@@ -11,8 +11,8 @@ if [[ $USER == 'user' ]]; then
         vboxmanage snapshot  "wifiLabClients" restorecurrent
 
         echo "Starting VM"
-        vboxmanage startvm "wifiLabAPs"
-        vboxmanage startvm "wifiLabClients"
+        vboxmanage startvm "wifiLabAPs" --type headless
+        vboxmanage startvm "wifiLabClients" --type headless
 else
         echo "Shutting down the VM"
         su -c 'VBoxManage controlvm "wifiLabAPs" poweroff' user
@@ -23,6 +23,6 @@ else
         su -c 'vboxmanage snapshot "wifiLabClients" restorecurrent' user
 
         echo "Starting VM"
-        su -c 'vboxmanage startvm "wifiLabAPs"' user
-        su -c 'vboxmanage startvm "wifiLabClients"' user
+        su -c 'vboxmanage startvm "wifiLabAPs" --type headless' user
+        su -c 'vboxmanage startvm "wifiLabClients" --type headless' user
 fi

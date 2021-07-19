@@ -6,7 +6,7 @@ while :
 do
 
 	#GET ID vwifi
-	VID=`cat /root/vwifi-client.log | grep ID: | awk {'print $2'}`
+	VID=`cat /root/vwifi-client.log | grep ID: | awk {'print $2'} | tail -n 1`
 
 	#if last ID id is disconnected
 	#curl and grep ID 

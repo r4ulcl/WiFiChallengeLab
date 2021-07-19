@@ -75,6 +75,7 @@ usermod -aG sudo user
 
 su -c 'xhost si:localuser:root' user
 
+echo 'xhost si:localuser:root' >> /home/user/.bashrc
 export PATH=$PATH:/sbin
 #echo 'xhost si:localuser:root' >>  /home/user/.bashrc
 
