@@ -11,6 +11,7 @@
 'test2' => '2q60joygCBJQuFo',
 'free1' => 'Jyl1iq8UajZ1fEK',
 'free2' => '5LqwwccmTg6C39y',
+'administrator' => '123456789a',
 'anon1' => 'CRgwj5fZTo1cO6Y');
 
 
@@ -28,9 +29,33 @@ exit;
 }
 }
 if (strpos($_SERVER['REMOTE_ADDR'], '192.168.0.') !== false) { //only MGT
-    echo "<br><br>";
-    echo "Router Login";
-    echo "<br><br>";
+  echo "<br><br>";
+  echo "Corp Router Login";
+  echo "<br><br>";
+}
+
+if (strpos($_SERVER['REMOTE_ADDR'], '192.168.7.') !== false) { //only ENTERPRISE
+  echo "<br><br>";
+  echo "Global Router Login";
+  echo "<br><br>";
+}
+
+if (strpos($_SERVER['REMOTE_ADDR'], '192.168.1.') !== false) { //only OPEN
+  echo "<br><br>";
+  echo "Open Router Login";
+  echo "<br><br>";
+}
+
+if (strpos($_SERVER['REMOTE_ADDR'], '192.168.1.') !== false) { //only PSK moviles
+  echo "<br><br>";
+  echo "PSK Router Login";
+  echo "<br><br>";
+}
+
+if (strpos($_SERVER['REMOTE_ADDR'], '192.168.8.') !== false) { //only WEP
+  echo "<br><br>";
+  echo "WEP Router Login";
+  echo "<br><br>";
 }
 ?>
 

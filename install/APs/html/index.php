@@ -76,6 +76,10 @@ if ($_SESSION["Username"]  == "anon1") {
     echo "FLAG: XhAK0YVSIwjeBDf";
 }
 
+if ($_SESSION["Username"]  == "administrator") {
+    echo "FLAG: Ke4kKmkrRc3dV0k";
+}
+
 
 echo "<br><br>";
 echo "<br><br>";

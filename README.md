@@ -58,7 +58,10 @@ If you want to create the VM manually click [here](install/README.md)
 - [x] Client other WPA
 - [x] WPS
 - [x] HTTP Server with simple login
+- [x] AutoStart Vm in headless
+- [ ] Tools in /root/tools
 - [ ] Web server different each AP
+- [ ] WEP Web server with flag username ESSID, password WEP password
 - [ ] WPA3
 - [ ] Karma
 - [ ] Decrypt WPA-EAP

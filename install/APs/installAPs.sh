@@ -79,6 +79,9 @@ dhcp-range=192.168.2.2,192.168.2.100,24h
 
 dhcp-host=wlan7,F0:9F:C2:71:22:77,192.168.7.1
 dhcp-range=192.168.7.2,192.168.7.100,24h
+
+dhcp-host=wlan8,F0:9F:C2:71:22:88,192.168.8.1
+dhcp-range=192.168.8.2,192.168.8.100,24h
 ' >> /etc/dnsmasq.conf
 
 # Config autoStart

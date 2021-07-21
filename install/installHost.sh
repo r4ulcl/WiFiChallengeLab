@@ -75,8 +75,9 @@ echo 'export PATH=$PATH:/sbin' >> ~/.bashrc
 usermod -aG sudo user
 
 su -c 'xhost si:localuser:root' user
+su user -c 'xhost +SI:localuser:root'
 
-echo 'xhost si:localuser:root' >> /home/user/.bashrc
+echo 'xhost si:localuser:root > /dev/null 2>&1' >> /home/user/.bashrc
 export PATH=$PATH:/sbin
 #echo 'xhost si:localuser:root' >>  /home/user/.bashrc
 
