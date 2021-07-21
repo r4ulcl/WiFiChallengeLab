@@ -65,6 +65,9 @@ echo '
 server=8.8.8.8
 server=8.8.4.4
 
+dhcp-option=3 #Disable default router gateway
+#dhcp-option=6 # Disables DNS
+
 dhcp-host=wlan0,F0:9F:C2:71:22:00,192.168.0.1
 dhcp-range=192.168.0.2,192.168.0.100,24h
 
