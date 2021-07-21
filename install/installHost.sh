@@ -33,7 +33,7 @@ mv debian-10.9.0-amd64-netinst.iso /home/user/
 cd 
 wget https://download.virtualbox.org/virtualbox/6.1.22/virtualbox-6.1_6.1.22-144080~Debian~buster_amd64.deb
 sudo dpkg -i virtualbox-6.1_6.1.22-144080~Debian~buster_amd64.deb
-apt --fix-broken install
+apt --fix-broken install -y
 
 
 # Dependencies
@@ -57,6 +57,7 @@ cd ..
 echo '#!/bin/sh -e
 
 nohup /root/startHost.sh &
+bash /home/user/restartVM.sh
 
 exit 0
 ' >>  /etc/rc.local

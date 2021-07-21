@@ -1,5 +1,7 @@
 #!/bin/bash
-apt install iw macchanger sudo libcurl4-openssl-dev curl libz-dev module-assistant libssl-dev libnl-genl-3-dev libnl-3-dev pkg-config libsqlite3-dev git hostapd dnsmasq curl -y
+apt update
+apt install macchanger -y
+apt install iw sudo libcurl4-openssl-dev curl libz-dev module-assistant libssl-dev libnl-genl-3-dev libnl-3-dev pkg-config libsqlite3-dev git hostapd dnsmasq curl -y
 apt install make g++ libnl-3-dev libnl-genl-3-dev -y
 apt-get install wpasupplicant -y
 # Git vwifi

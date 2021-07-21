@@ -1,4 +1,13 @@
 # WifiLab
+ __      __.__  _____.__.____          ___.    
+/  \    /  \__|/ ____\__|    |   _____ \_ |__  
+\   \/\/   /  \   __\|  |    |   \__  \ | __ \ 
+ \        /|  ||  |  |  |    |___ / __ \| \_\ \
+  \__/\  / |__||__|  |__|_______ (____  /___  /
+       \/                       \/    \/    \/ 
+                                  
+
+Virtualized WiFi pentesting laboratory without the need for physical WiFi cards, using mac80211_hwsim using https://github.com/Raizo62/vwifi proyect. 
 
 - [WifiLab](#wifilab)
     - [Download OVA](#download-ova)

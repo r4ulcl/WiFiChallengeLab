@@ -1,6 +1,7 @@
 #!/bin/bash
-
-apt install sudo macchanger iw aircrack-ng libcurl4-openssl-dev curl libz-dev module-assistant libssl-dev libnl-genl-3-dev libnl-3-dev pkg-config libsqlite3-dev git hostapd dnsmasq -y
+apt update
+apt install macchanger -y
+apt install sudo  iw aircrack-ng libcurl4-openssl-dev curl libz-dev module-assistant libssl-dev libnl-genl-3-dev libnl-3-dev pkg-config libsqlite3-dev git hostapd dnsmasq -y
 apt install make g++ libnl-3-dev libnl-genl-3-dev -y
 apt install apache2 php  -y
 apt-get install wpasupplicant -y
@@ -88,7 +89,7 @@ chmod 755 /etc/rc.local
 
 cd /root
 wget 10.0.2.15/APs/startAPs.sh
-chmod +x /root/APs/startAPs.sh
+chmod +x /root/startAPs.sh
 
 cd /root
 wget 10.0.2.15/checkVWIFI.sh
