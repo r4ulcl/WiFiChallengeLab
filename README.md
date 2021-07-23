@@ -1,11 +1,12 @@
 # WifiLab
+```
  __      __.__  _____.__.____          ___.    
 /  \    /  \__|/ ____\__|    |   _____ \_ |__  
 \   \/\/   /  \   __\|  |    |   \__  \ | __ \ 
  \        /|  ||  |  |  |    |___ / __ \| \_\ \
   \__/\  / |__||__|  |__|_______ (____  /___  /
        \/                       \/    \/    \/ 
-                                  
+```
 
 Virtualized WiFi pentesting laboratory without the need for physical WiFi cards, using mac80211_hwsim using https://github.com/Raizo62/vwifi proyect. 
 
@@ -60,10 +61,11 @@ If you want to create the VM manually click [here](install/README.md)
 - [x] HTTP Server with simple login
 - [x] AutoStart Vm in headless
 - [ ] Tools in /root/tools
-- [ ] Web server different each AP
 - [ ] WEP Web server with flag username ESSID, password WEP password
+- [ ] Brute force MGT
+- [X] Web server different each AP (check IP)
 - [ ] WPA3
-- [ ] Karma
+- [ ] krackattacks < 2.6-r1
 - [ ] Decrypt WPA-EAP
 - [ ] Phishing RogueAP
 - [ ] Real captive portal in OPN

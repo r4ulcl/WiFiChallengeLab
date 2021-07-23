@@ -1,3 +1,5 @@
+WifiLab Tasks
+
 # WifiLab Tasks
 
 - [WifiLab Tasks](#wifilab-tasks)
@@ -5,53 +7,50 @@
         - [IMPORTANT INTRUCCTIONS](#important-intrucctions)
         - [Scope](#scope)
         - [References](#references)
-    - [Recon](#recon)
-        - [List all client MACs](#list-all-client-macs)
-        - [Detect APs information](#detect-aps-information)
-        - [Get probes from all users](#get-probes-from-all-users)
-        - [Find hidden network ESSID](#find-hidden-network-essid)
-    - [Open](#open)
-        - [Access to wifi-guest network](#access-to-wifi-guest-network)
-        - [Login to the server with users password](#login-to-the-server-with-users-password)
-        - [Verify Client isolation](#verify-client-isolation)
-    - [WEP](#wep)
-        - [Get hidden wifi password](#get-hidden-wifi-password)
-    - [PSK](#psk)
-        - [Get wifi-moviles password](#get-wifi-moviles-password)
-        - [Get users login traffic passively](#get-users-login-traffic-passively)
-        - [Login with stolen creds](#login-with-stolen-creds)
-        - [Get wifi-oficina AP Password](#get-wifi-oficina-ap-password)
-        - [Get wifi-admin AP password](#get-wifi-admin-ap-password)
-    - [MGT](#mgt)
-        - [Get users login IDs (usernames)](#get-users-login-ids-usernames)
-        - [Get cert information](#get-cert-information)
-        - [Get EAP methods supported by AP](#get-eap-methods-supported-by-ap)
-        - [Get first USER password of wifi-corp](#get-first-user-password-of-wifi-corp)
-        - [Get CA from the Router using default creds](#get-ca-from-the-router-using-default-creds)
-        - [Get second USER password using the CA](#get-second-user-password-using-the-ca)
-        - [Creds Relay](#creds-relay)
-        - [Access as GLOBAL\\Adminsitrator](#access-as-globaladminsitrator)
-        - [Login to wifi-global Administrator web creds](#login-to-wifi-global-administrator-web-creds)
+    - [Recon (20 min)](#recon-20-min)
+        - [List all client MACs (5 min)](#list-all-client-macs-5-min)
+        - [Detect APs information (5 min)](#detect-aps-information-5-min)
+        - [Get probes from all users (5 min)](#get-probes-from-all-users-5-min)
+        - [Find hidden network ESSID (5 min)](#find-hidden-network-essid-5-min)
+    - [Open (20 min)](#open-20-min)
+        - [Access to wifi-guest network (10 min)](#access-to-wifi-guest-network-10-min)
+        - [Login to the server with users password (5 min)](#login-to-the-server-with-users-password-5-min)
+        - [Verify Client isolation (5 min)](#verify-client-isolation-5-min)
+    - [WEP (15 min)](#wep-15-min)
+        - [Get hidden wifi password (15 min)](#get-hidden-wifi-password-15-min)
+    - [PSK (30 min)](#psk-30-min)
+        - [Get wifi-moviles password (5 min)](#get-wifi-moviles-password-5-min)
+        - [Get users traffic passively (5 min)](#get-users-traffic-passively-5-min)
+        - [Login with stolen cookies (10 min)](#login-with-stolen-cookies-10-min)
+        - [Get wifi-oficina AP Password (5 min)](#get-wifi-oficina-ap-password-5-min)
+        - [Get wifi-admin AP password (5 min)](#get-wifi-admin-ap-password-5-min)
+    - [MGT (110 min)](#mgt-110-min)
+        - [Get users login IDs (usernames) (5 min)](#get-users-login-ids-usernames-5-min)
+        - [Get cert information (5 min)](#get-cert-information-5-min)
+        - [Get EAP methods supported by AP (10 min)](#get-eap-methods-supported-by-ap-10-min)
+        - [Get first USER password of wifi-corp (15 min)](#get-first-user-password-of-wifi-corp-15-min)
+        - [Get CA from the Router using default creds (5 min)](#get-ca-from-the-router-using-default-creds-5-min)
+        - [Get second USER password using the CA (20 min)](#get-second-user-password-using-the-ca-20-min)
+        - [Creds Relay (15 min)](#creds-relay-15-min)
+        - [Access as GLOBAL\\Adminsitrator (30 min)](#access-as-globaladminsitrator-30-min)
+        - [Login to wifi-global Administrator web creds (5 min)](#login-to-wifi-global-administrator-web-creds-5-min)
 
 ## Introduction
 
 ### IMPORTANT INTRUCCTIONS
 
 - You can't see you own traffic with airodump-ng (if you have airodump and mount an AP you won't see it)
-- If the traffic fails or something fails you cant reset the LabAPs or LabClients VM to the snapshot and restart. If you reboot, you have to wait until the "ALL SET" message.
 - User/pass:
     - user/toor
     - root/toor
-- To manage the VMs use the home scripts:
+- The VMs starts automatically to the snapshot. In case of error use the home scripts:
     - startVM.sh to start
     - stopVM.sh to stop and restore
     - restartVM.sh to restart and restore
 - All tools are in /root folder
-- All bruteforce can be done with rockyou
+- All bruteforce can be done using rockyou
 - All necessary tools for the lab are installed, but others can be installed.
 - Enable nested VT-x / AMD-V on Virtualbox host if not enabled
-
-![75003971b5d131f68cc1a2b21d2aafab.png](../_resources/128cf79224ce452fad138b56734e93c6.png)
 
 ### Scope
 
@@ -74,9 +73,9 @@
 - https://github.com/s0lst1c3/eaphammer/wiki
 - [https://wiki.innovaphone.com/index.php?title=Howto:802.1X\_EAP-TLS\_With\_FreeRadius#Creation\_Of\_A\_Client_Certificate](https://wiki.innovaphone.com/index.php?title=Howto:802.1X_EAP-TLS_With_FreeRadius#Creation_Of_A_Client_Certificate)
 
-## Recon
+## Recon (20 min)
 
-- ### List all client MACs
+- ### List all client MACs (5 min)
     
     <details><summary>Hint 1</summary>
     
@@ -96,7 +95,7 @@
 
 * * *
 
-- ### Detect APs information
+- ### Detect APs information (5 min)
     
     <details><summary>Hint 1</summary>
     
@@ -116,7 +115,7 @@
 
 * * *
 
-- ### Get probes from all users
+- ### Get probes from all users (5 min)
     
     <details><summary>Hint 1</summary>
     
@@ -136,7 +135,7 @@
 
 * * *
 
-- ### Find hidden network ESSID
+- ### Find hidden network ESSID (5 min)
     
     <details><summary>Hint 1</summary>
     
@@ -154,9 +153,9 @@
 
 * * *
 
-## Open
+## Open (20 min)
 
-- ### Access to wifi-guest network
+- ### Access to wifi-guest network (10 min)
     
     <details><summary>Hint 1</summary>
     
@@ -178,7 +177,7 @@
 
 * * *
 
-- ### Login to the server with users password
+- ### Login to the server with users password (5 min)
     
     <details><summary>Hint 1</summary>
     
@@ -196,7 +195,7 @@
 
 * * *
 
-- ### Verify Client isolation
+- ### Verify Client isolation (5 min)
     
     <details><summary>Hint 1</summary>
     
@@ -215,9 +214,9 @@
 
 * * *
 
-## WEP
+## WEP (15 min)
 
-- ### Get hidden wifi password
+- ### Get hidden wifi password (15 min)
     
     <details><summary>Hint 1</summary>
     
@@ -226,6 +225,7 @@
     </details><details><summary>Hint 2</summary>
     
     - WEP without any client
+    - It may be necessary to wait a few minutes
     - if: "wi_reader(): Network is down" error:
         - airmon-ng check kill
     
@@ -238,9 +238,9 @@
 
 * * *
 
-## PSK
+## PSK (30 min)
 
-- ### Get wifi-moviles password
+- ### Get wifi-moviles password (5 min)
     
     <details><summary>Hint 1</summary>
     
@@ -261,7 +261,7 @@
 
 * * *
 
-- ### Get users login traffic passively
+- ### Get users traffic passively (5 min)
     
     <details><summary>Hint 1</summary>
     
@@ -270,6 +270,7 @@
     </details><details><summary>Hint 2</summary>
     
     - Get dump and use the password to decrypt the plan traffic.
+    - If there is no password, use the cookies to access
     
     </details><details><summary>Hint 3</summary>
     
@@ -281,11 +282,11 @@
 
 * * *
 
-- ### Login with stolen creds
+- ### Login with stolen cookies (10 min)
     
     <details><summary>Hint 1</summary>
     
-    - Get cred from PSK plain text
+    - Get cookies from PSK plain text
     
     </details><details><summary>Hint 2</summary>
     
@@ -302,7 +303,7 @@
 
 * * *
 
-- ### Get wifi-oficina AP Password
+- ### Get wifi-oficina AP Password (5 min)
     
     <details><summary>Hint 1</summary>
     
@@ -321,7 +322,7 @@
 
 * * *
 
-- ### Get wifi-admin AP password
+- ### Get wifi-admin AP password (5 min)
     
     <details><summary>Hint 1</summary>
     
@@ -339,9 +340,9 @@
 
 * * *
 
-## MGT
+## MGT (110 min)
 
-- ### Get users login IDs (usernames)
+- ### Get users login IDs (usernames) (5 min)
     
     <details><summary>Hint 1</summary>
     
@@ -362,7 +363,7 @@
 
 * * *
 
-- ### Get cert information
+- ### Get cert information (5 min)
     
     <details><summary>Hint 1</summary>
     
@@ -383,7 +384,7 @@
 
 * * *
 
-- ### Get EAP methods supported by AP
+- ### Get EAP methods supported by AP (10 min)
     
     <details><summary>Hint 1</summary>
     
@@ -402,7 +403,7 @@
 
 * * *
 
-- ### Get first USER password of wifi-corp
+- ### Get first USER password of wifi-corp (15 min)
     
     <details><summary>Hint 1</summary>
     
@@ -422,7 +423,7 @@
 
 * * *
 
-- ### Get CA from the Router using default creds
+- ### Get CA from the Router using default creds (5 min)
     
     <details><summary>Hint 1</summary>
     
@@ -442,7 +443,7 @@
 
 * * *
 
-- ### Get second USER password using the CA
+- ### Get second USER password using the CA (20 min)
     
     <details><summary>Hint 1</summary>
     
@@ -464,7 +465,7 @@
 
 * * *
 
-- ### Creds Relay
+- ### Creds Relay (15 min)
     
     <details><summary>Hint 1</summary>
     
@@ -484,7 +485,7 @@
 
 * * *
 
-- ### Access as GLOBAL\\Adminsitrator
+- ### Access as GLOBAL\\Adminsitrator (30 min)
     
     <details><summary>Hint 1</summary>
     
@@ -503,7 +504,7 @@
 
 * * *
 
-- ### Login to wifi-global Administrator web creds
+- ### Login to wifi-global Administrator web creds (5 min)
     
     <details><summary>Hint 1</summary>
     
