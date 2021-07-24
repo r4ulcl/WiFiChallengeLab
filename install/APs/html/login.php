@@ -6,6 +6,7 @@
 'GLOBAL\GlobalAdmin' => 'SuperSuperSecure@!@',
 'CONTOSO\Administrator' => 'SuperSecure@!@',
 'CONTOSO\juan.tr' => 'Secret!',
+'CONTOSO\luis.da' => 'u89gh68!6fcv56ed',
 'admin' => 'admin',
 'test1' => 'OYfDcUNQu9PCojb',
 'test2' => '2q60joygCBJQuFo',

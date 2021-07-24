@@ -111,4 +111,4 @@
 
 "CONTOSO\Administrator"			GTC			"SuperSecure@!@" [2]
 "CONTOSO\juan.tr"			MSCHAPV2		"Secret!" [2]
-
+"CONTOSO\luis.da"			MSCHAPV2		"u89gh68!6fcv56ed" [2]

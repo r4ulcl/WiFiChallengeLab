@@ -21,7 +21,9 @@ do
 	# MGT
 	curl -s 'http://192.168.0.1/login.php' --interface wlan0 --compressed -H 'Content-Type: application/x-www-form-urlencoded' -H 'Connection: keep-alive' -H 'Upgrade-Insecure-Requests: 1' --data-raw 'Username=CONTOSO%5Cjuan.tr&Password=Secret%21&Submit=Login' --cookie-jar /tmp/userjuan
 	curl -s 'http://192.168.0.1/login.php' --interface wlan1 --compressed -H 'Content-Type: application/x-www-form-urlencoded' -H 'Connection: keep-alive' -H 'Upgrade-Insecure-Requests: 1' --data-raw 'Username=CONTOSO%5CAdministrator&Password=SuperSecure%40%21%40&Submit=Login' --cookie-jar /tmp/userAdmin
-	
+
+	curl -s 'http://192.168.0.1/login.php' --interface wlan0 --compressed -H 'Content-Type: application/x-www-form-urlencoded' -H 'Connection: keep-alive' -H 'Upgrade-Insecure-Requests: 1' --data-raw 'Username=CONTOSO%5Cluis.da&Password=u89gh68!6fcv56ed&Submit=Login' --cookie-jar /tmp/userluis
+
 	# MGT TLS
 	curl -s 'http://192.168.7.1/login.php' --interface wlan2 --compressed -H 'Content-Type: application/x-www-form-urlencoded' -H 'Connection: keep-alive' -H 'Upgrade-Insecure-Requests: 1' --data-raw 'Username=GLOBAL%5CGlobalAdmin&Password=SuperSuperSecure%40%21%40&Submit=Login' --cookie-jar /tmp/userGlobal
 
