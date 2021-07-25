@@ -1,4 +1,5 @@
 # WifiLab
+
 ```
  __      __.__  _____.__.____          ___.    
 /  \    /  \__|/ ____\__|    |   _____ \_ |__  
@@ -8,7 +9,7 @@
        \/                       \/    \/    \/ 
 ```
 
-Virtualized WiFi pentesting laboratory without the need for physical WiFi cards, using mac80211_hwsim using https://github.com/Raizo62/vwifi proyect. 
+Virtualized WiFi pentesting laboratory without the need for physical WiFi cards, using mac80211_hwsim using https://github.com/Raizo62/vwifi proyect.
 
 - [WifiLab](#wifilab)
     - [Download OVA](#download-ova)
@@ -18,13 +19,17 @@ Virtualized WiFi pentesting laboratory without the need for physical WiFi cards,
     - [Tasks](#tasks)
     - [Solutions TODO](#solutions-todo)
     - [Manual create VM](#manual-create-vm)
+- [FAQ](#faq)
+    - [From where are the attacks carried out?](#from-where-are-the-attacks-carried-out)
+    - [Where are the tools?](#where-are-the-tools)
+    - [What to do if there are problems with some AP or clients?](#what-to-do-if-there-are-problems-with-some-ap-or-clients)
 - [TODO](#todo)
 
 ## Download OVA
 
 ### OVA VirtualBox
 
-- URL TODO
+- https://mega.nz/folder/rRAHiCbB#sYX_JeqH5IOhZ_WRPJnGmg/
 
 ### OVA VMWare TODO
 
@@ -39,8 +44,8 @@ Virtualized WiFi pentesting laboratory without the need for physical WiFi cards,
 
 ## Tasks
 
-- [MarkDown](WifiLab%20Tasks/WifiLab%20Tasks.md)
-- [HTML](WifiLab%20Tasks/WifiLab%20Tasks.html)
+- [MarkDown](./WifiLab%20Tasks/WifiLab%20Tasks.md "WifiLab%20Tasks/WifiLab%20Tasks.md")
+- [HTML](./WifiLab%20Tasks/WifiLab%20Tasks.html "WifiLab%20Tasks/WifiLab%20Tasks.html")
 
 ## Solutions TODO
 
@@ -49,7 +54,25 @@ Virtualized WiFi pentesting laboratory without the need for physical WiFi cards,
 
 ## Manual create VM
 
-If you want to create the VM manually click [here](install/README.md)
+If you want to create the VM manually click [here](./install/README.md "install/README.md")
+
+# FAQ
+
+## From where are the attacks carried out?
+
+All attacks are made from the Debian VM
+
+## Where are the tools?
+
+They are in $HOME/tools
+
+## Do I have to do something when I turn on the VM to start?
+
+No, everything runs automatically.
+
+## What to do if there are problems with some AP or clients?
+
+Run restartVM.sh in $HOME folder
 
 # TODO
 
@@ -60,12 +83,13 @@ If you want to create the VM manually click [here](install/README.md)
 - [x] WPS
 - [x] HTTP Server with simple login
 - [x] AutoStart Vm in headless
-- [ ] Tools in /root/tools
-- [ ] WEP Web server with flag username ESSID, password WEP password
-- [ ] Brute force MGT
-- [X] Web server different each AP (check IP)
+- [ ] Tools in /root/tools and ln -s to /home/user
+- [x] WEP Web server with flag username ESSID, password WEP password
+- [x] Brute force MGT
+- [x] Web server different each AP (check IP)
 - [ ] WPA3
 - [ ] krackattacks < 2.6-r1
 - [ ] Decrypt WPA-EAP
 - [ ] Phishing RogueAP
 - [ ] Real captive portal in OPN
+- [ ] Fix CPU AMD

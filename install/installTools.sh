@@ -139,6 +139,14 @@ cd mdk4
 make
 sudo make install
 
+#Air-hammer
+git clone https://github.com/Wh1t3Rh1n0/air-hammer
+cd air-hammer
+curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
+sudo python2 get-pip.py
+pip2 install wpa_supplicant
+pip2 install service_identity
+ 
 #create_ap
 #disable_hotspot.sh
 #evilTrust
