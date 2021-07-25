@@ -1,5 +1,9 @@
 # Hacking tools
 
+FOLDER=`pwd`
+mkdir tools
+TOOLS=$FOLDER/tools
+
 #kali repo
 #echo 'deb http://http.kali.org/kali kali-rolling main contrib non-free
 #deb http://old.kali.org/kali moto main non-free contrib
@@ -27,7 +31,7 @@ sudo apt update
 git clone https://github.com/blackarrowsec/EAP_buster
 
 #wifi_db
-cd
+cd $TOOLS
 sudo apt install python3-pip -y
 git clone https://github.com/RaulCalvoLaorden/wifi_db
 cd wifi_db
@@ -39,6 +43,7 @@ wget https://gist.githubusercontent.com/RaulCalvoLaorden/f3470f097d1cd21dbc5a238
 chmod +x pcapFilter.sh
 
 #Eaphhammer
+cd $TOOLS
 git clone https://github.com/s0lst1c3/eaphammer.git
 cd eaphammer
 for L in `cat kali-dependencies.txt` ; do echo $L; apt install $L -y ;done
@@ -49,7 +54,7 @@ sudo apt-get install python-openssl python3-openssl -y
 pip3 install flask flask_cors flask_socketio pywebcopy
 
 #hostapd-wpe
-cd
+cd $TOOLS
 # https://github.com/aircrack-ng/aircrack-ng/tree/master/patches/wpe/hostapd-wpe
 wget https://raw.githubusercontent.com/aircrack-ng/aircrack-ng/master/patches/wpe/hostapd-wpe/hostapd-wpe.patch
 wget https://w1.fi/releases/hostapd-2.9.tar.gz
@@ -70,6 +75,7 @@ make install
 apt install aircrack-ng -y
 
 # Creap
+cd $TOOLS
 git clone https://github.com/Snizz/crEAP
 #Arp-scan
 apt install arp-scan -y
@@ -84,7 +90,7 @@ apt install arp-scan -y
 #airgeddon
 sudo apt install tshark john lighttpd pixiewps isc-dhcp-server reaver crunch -y
 sudo apt install asleap bettercap ettercap-text-only hcxtools hcxdumptool bully mdk4 beef-xss -y
-cd
+cd $TOOLS
 git clone --depth 1 https://github.com/v1s1t0r1sh3r3/airgeddon.git
 cd airgeddon
 #sudo bash airgeddon.sh
@@ -94,7 +100,7 @@ cd airgeddon
 apt-get --yes install build-essential git libnl-genl-3-dev libssl-dev build-essential pkg-config git libnl-genl-3-dev libssl-dev 
 apt-get install mana-toolkit -y
 
-cd
+cd $TOOLS
 git clone https://github.com/sensepost/hostapd-mana
 cd hostapd-mana
 make -C hostapd -j 4
@@ -102,7 +108,7 @@ make -C hostapd -j 4
 sudo ln -s /root/hostapd-mana/hostapd/hostapd /usr/bin/hostapd-mana
 
 #eapeak
-cd
+cd $TOOLS
 sudo apt install python-dev libssl-dev swig python3-dev gcc python-m2crypto -y
 sudo pip3 install pipenv
 
@@ -113,7 +119,7 @@ pipenv --two install
 #pipenv shell
 
 # Reaver
-cd
+cd $TOOLS
 git clone https://github.com/t6x/reaver-wps-fork-t6x
 cd reaver-wps-fork-t6x*
 cd src
@@ -128,18 +134,19 @@ make -C wpa_supplicant -j 4
 
 
 # berate_ap
-cd
+cd $TOOLS
 git clone https://github.com/sensepost/berate_ap
 
 #MD4
 apt-get install pkg-config libnl-3-dev libnl-genl-3-dev libpcap-dev 
-cd
+cd $TOOLS
 git clone https://github.com/aircrack-ng/mdk4
 cd mdk4
 make
 sudo make install
 
 #Air-hammer
+cd $TOOLS
 git clone https://github.com/Wh1t3Rh1n0/air-hammer
 cd air-hammer
 curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
