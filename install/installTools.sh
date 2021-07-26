@@ -162,3 +162,6 @@ pip2 install service_identity
 #start_hotspot.sh
 
 #wifipumpkin3
+
+chown -R user $TOOLS
+ln -s $TOOLS /home/user/tools

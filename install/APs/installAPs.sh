@@ -3,7 +3,7 @@ apt update
 apt install macchanger -y
 apt install sudo  iw aircrack-ng libcurl4-openssl-dev curl libz-dev module-assistant libssl-dev libnl-genl-3-dev libnl-3-dev pkg-config libsqlite3-dev git hostapd dnsmasq -y
 apt install make g++ libnl-3-dev libnl-genl-3-dev -y
-apt install apache2 php  -y
+apt install apache2 php  -y #Web server
 apt-get install wpasupplicant -y
 
 # Git vwifi

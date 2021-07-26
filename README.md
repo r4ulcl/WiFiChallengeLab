@@ -15,66 +15,105 @@ Virtualized WiFi pentesting laboratory without the need for physical WiFi cards,
     - [Download OVA](#download-ova)
         - [OVA VirtualBox](#ova-virtualbox)
         - [OVA VMWare TODO](#ova-vmware-todo)
-    - [OVA Usage](#ova-usage)
+    - [First steps (OVA Usage)](#first-steps-ova-usage)
     - [Tasks](#tasks)
+    - [IMPORTANT INTRUCCTIONS](#important-intrucctions)
+    - [FAQ](#faq)
+        - [From where are the attacks carried out?](#from-where-are-the-attacks-carried-out)
+        - [Where are the tools?](#where-are-the-tools)
+        - [Do I have to do something when I turn on the VM to start?](#do-i-have-to-do-something-when-i-turn-on-the-vm-to-start)
+        - [What to do if there are problems with some AP or clients?](#what-to-do-if-there-are-problems-with-some-ap-or-clients)
     - [Solutions TODO](#solutions-todo)
     - [Manual create VM](#manual-create-vm)
-- [FAQ](#faq)
-    - [From where are the attacks carried out?](#from-where-are-the-attacks-carried-out)
-    - [Where are the tools?](#where-are-the-tools)
-    - [What to do if there are problems with some AP or clients?](#what-to-do-if-there-are-problems-with-some-ap-or-clients)
-- [TODO](#todo)
+    - [TODO](#todo)
 
 ## Download OVA
 
 ### OVA VirtualBox
 
-- https://mega.nz/folder/rRAHiCbB#sYX_JeqH5IOhZ_WRPJnGmg/
+- [https://mega.nz/folder/rRAHiCbB#sYX\_JeqH5IOhZ\_WRPJnGmg/](https://mega.nz/folder/rRAHiCbB#sYX_JeqH5IOhZ_WRPJnGmg/)
 
 ### OVA VMWare TODO
 
 - URL TODO
 
-## OVA Usage
+* * *
 
+## First steps (OVA Usage)
+
+- Download OVA from mega
 - Import OVA in VMWare or VirtualBox
-- Go to Task list
 - Read the IMPORTANT INTRUCCTIONS
+- Check that the Wi-Fi networks to be audited can be seen from the VM
 - If there is any problem exec restartVM.sh script
+- Go to Challenges list
+
+* * *
 
 ## Tasks
 
-- [MarkDown](./WifiLab%20Tasks/WifiLab%20Tasks.md "WifiLab%20Tasks/WifiLab%20Tasks.md")
-- [HTML](./WifiLab%20Tasks/WifiLab%20Tasks.html "WifiLab%20Tasks/WifiLab%20Tasks.html")
+- [MarkDown](/C:/Users/user/AppData/Local/Programs/Joplin/resources/app.asar/WifiLab%20Tasks/WifiLab%20Tasks.md "WifiLab%20Tasks/WifiLab%20Tasks.md")
+- [HTML](/C:/Users/user/AppData/Local/Programs/Joplin/resources/app.asar/WifiLab%20Tasks/WifiLab%20Tasks.html "WifiLab%20Tasks/WifiLab%20Tasks.html")
+
+* * *
+
+## IMPORTANT INTRUCCTIONS
+
+- You can't see you own traffic with airodump-ng (if you have airodump and mount an AP you won't see it)
+- User/pass:
+    - user/toor
+    - root/toor
+- The VMs starts automatically to the snapshot. In case of error use the home script:
+    - restartVM.sh to restart and restore
+- All tools are in /root/tools folder
+- All bruteforce can be done using rockyou
+- All necessary tools for the lab are installed, but others can be installed.
+- Enable nested VT-x / AMD-V on Virtualbox host if not enabled
+- Scope
+    - "wifi-guest"
+    - "wifi-moviles"
+    - "wifi-corp"
+    - "wifi-global"
+    - "wifi-admin"
+    - "wifi-oficina"
+    - Hidden network: &lt;length: 13&gt;
+
+* * *
+
+## FAQ
+
+### From where are the attacks carried out?
+
+All attacks are made from the Debian VM
+
+### Where are the tools?
+
+They are in $HOME/tools
+
+### Do I have to do something when I turn on the VM to start?
+
+No, everything runs automatically.
+
+### What to do if there are problems with some AP or clients?
+
+Run restartVM.sh in $HOME folder
+
+* * *
 
 ## Solutions TODO
 
 - MarkDown
 - HTML
 
+* * *
+
 ## Manual create VM
 
-If you want to create the VM manually click [here](./install/README.md "install/README.md")
+If you want to create the VM manually click [here](https://github.com/RaulCalvoLaorden/WifiLab/blob/main/install/README.md%22)
 
-# FAQ
+* * *
 
-## From where are the attacks carried out?
-
-All attacks are made from the Debian VM
-
-## Where are the tools?
-
-They are in $HOME/tools
-
-## Do I have to do something when I turn on the VM to start?
-
-No, everything runs automatically.
-
-## What to do if there are problems with some AP or clients?
-
-Run restartVM.sh in $HOME folder
-
-# TODO
+## TODO
 
 - [ ] Walkthrough
 - [ ] Upload VM

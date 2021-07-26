@@ -20,7 +20,7 @@ if [[ $USER == 'user' ]]; then
 
         echo "Cheking"
         STATE=`vboxmanage showvminfo "wifiLabClients" |  grep State: ;  vboxmanage showvminfo "wifiLabAPs" |  grep State:`
-        if echo "$STATE" | grep powered off ; then
+        if echo "$STATE" | grep 'powered off' ; then
                 echo "VM powered off"
                 bash /root/restartVM.sh
         fi
@@ -44,7 +44,7 @@ else
 
         echo "Cheking"
         STATE=`su -c 'vboxmanage showvminfo "wifiLabClients"' user |  grep State: ;  su -c 'vboxmanage showvminfo "wifiLabAPs"' user |  grep State:`
-        if echo "$STATE" | grep powered off ; then
+        if echo "$STATE" | grep 'powered off' ; then
                 echo "VM powered off"
                 bash /root/restartVM.sh
         fi
