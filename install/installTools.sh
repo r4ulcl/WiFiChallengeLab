@@ -38,7 +38,7 @@ cd wifi_db
 pip3 install -r requirements.txt 
 
 # pcapFilter.sh
-cd 
+cd $TOOLS
 wget https://gist.githubusercontent.com/RaulCalvoLaorden/f3470f097d1cd21dbc5a238883e79fb2/raw/pcapFilter.sh
 chmod +x pcapFilter.sh
 

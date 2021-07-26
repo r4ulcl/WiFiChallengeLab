@@ -1,6 +1,11 @@
 #!/bin/bash
 
 apt update
+apt full-upgrade
+
+apt install -y dos2unix #remove CRLF
+
+find . -exec dos2unix {} \;
 
 cp startHost.sh /root/
 chmod +x /root/startHost.sh
