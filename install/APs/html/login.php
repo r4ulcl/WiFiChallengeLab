@@ -47,7 +47,7 @@ if (strpos($_SERVER['REMOTE_ADDR'], '192.168.1.') !== false) { //only OPEN
   echo "<br><br>";
 }
 
-if (strpos($_SERVER['REMOTE_ADDR'], '192.168.1.') !== false) { //only PSK moviles
+if (strpos($_SERVER['REMOTE_ADDR'], '192.168.2.') !== false) { //only PSK moviles
   echo "<br><br>";
   echo "PSK Router Login";
   echo "<br><br>";
