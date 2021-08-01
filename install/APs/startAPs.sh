@@ -58,9 +58,16 @@ hostapd /root/mgt/hostapd-wpe-tls.conf > /root/hostapd-wpe-tls.log &
 # PSK hidden
 ip addr add 192.168.8.1/24 dev wlan8
 hostapd /root/wep/hostapd_wep_hidden.conf > /root/hostapd_wep_hidden.log &
+
 # PSK WPS
 ip addr add 192.168.9.1/24 dev wlan9
 hostapd /root/psk/hostapd_wps.conf > /root/hostapd_wps.log &
+
+# PSK krack
+hostapd_krack.conf
+ip addr add 192.168.10.1/24 dev wlan10
+/root/krack/hostapd-2.6/hostapd/hostapd /root/psk/hostapd_krack.conf > /root/hostapd_krack.log &
+
 
 bash /root/checkVWIFI.sh > /root/checkVWIFI.log &
 

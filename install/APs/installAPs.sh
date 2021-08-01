@@ -26,14 +26,23 @@ patch -p1 < ../hostapd-wpe.patch
 cd hostapd
 
 make
-make install
+make install 
 make wpe
 
 cd /etc/hostapd-wpe/certs
 ./bootstrap
 make install
 
-
+# Host apd 2.6 krackattacks
+cd /root
+mkdir krack
+cd krack
+wget https://w1.fi/releases/hostapd-2.6.tar.gz
+tar -zxf hostapd-2.6.tar.gz
+cd hostapd-2.6/hostapd
+cp defconfig .config
+sed -i '/CONFIG_LIBNL32=y/s/^#//g' .config # remove comment
+make
 
 # Hostapd config PSK!!
 cd /root
