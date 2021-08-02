@@ -70,6 +70,7 @@ chmod 755 /etc/rc.local
 
 cd
 wget https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt
+wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Usernames/top-usernames-shortlist.txt
 
 
 # Certs TLS https://wiki.innovaphone.com/index.php?title=Howto:802.1X_EAP-TLS_With_FreeRadius
