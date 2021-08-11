@@ -21,7 +21,7 @@ if ($_SESSION["Username"]  == "CONTOSO\Administrator") {
 if ($_SESSION["Username"]  == "admin") {
 
 	
-	if (strpos($_SERVER['REMOTE_ADDR'], '192.168.0.') !== false) { //only MGT	
+	if (strpos($_SERVER['REMOTE_ADDR'], '192.168.10.') !== false) { //only MGT Relay	
 		echo "<br><br>";
 		echo "<br><br>";
 		echo "AP CONFIG:";
