@@ -18,11 +18,16 @@ macchanger -m F0:9F:C2:71:22:66 wlan6 # MGT Relay
 macchanger -m F0:9F:C2:71:22:77 wlan7 # MGT TLS
 macchanger -m F0:9F:C2:71:22:88 wlan8 # TODO
 
-macchanger -m 8d:4c:02:22:c9:33 wlan9 # Other 1
-macchanger -m 4f:c2:15:67:f1:87 wlan10 # Other 2
-macchanger -m f8:b5:cd:67:50:d5 wlan11 # Other 3
-macchanger -m 98:ab:c9:01:8d:e1 wlan12 # Other 4
-macchanger -m 76:c4:de:29:5f:b9 wlan13 # Other 5
+macchanger -r wlan9     # Other 0
+macchanger -r wlan10    # Other 1
+macchanger -r wlan11    # Other 2
+macchanger -r wlan12    # Other 3
+macchanger -r wlan13    # Other 4
+#macchanger -m 8d:4c:02:22:c9:33 wlan9 # Other 1
+#macchanger -m 4f:c2:15:67:f1:87 wlan10 # Other 2
+#macchanger -m f8:b5:cd:67:50:d5 wlan11 # Other 3
+#macchanger -m 98:ab:c9:01:8d:e1 wlan12 # Other 4
+#macchanger -m 76:c4:de:29:5f:b9 wlan13 # Other 5
 
 vwifi-client 10.0.2.15  > /root/vwifi-client.log &
 

@@ -17,6 +17,7 @@ do
 	cp $i /root/
 	sudo chown user $i
 	cp $i /home/user/
+	chown user /home/user/$i
 done
 
 cp WifiLab.ova /home/user/
