@@ -66,16 +66,16 @@ hostapd /root/mgt/hostapd-wpe-tls.conf > /root/hostapd-wpe-tls.log &
 
 
 # PSK Other
-ip addr add 192.168.3.1/24 dev wlan9
+ip addr add 192.168.9.1/24 dev wlan9
 hostapd /root/psk/hostapd_other0.conf > /root/hostapd_other0.log & 
 
-ip addr add 192.168.4.1/24 dev wlan10
+ip addr add 192.168.10.1/24 dev wlan10
 hostapd /root/psk/hostapd_other1.conf > /root/hostapd_other1.log & 
 
-ip addr add 192.168.5.1/24 dev wlan11
+ip addr add 192.168.11.1/24 dev wlan11
 hostapd /root/psk/hostapd_other2.conf > /root/hostapd_other2.log & 
 
-ip addr add 192.168.6.1/24 dev wlan12
+ip addr add 192.168.12.1/24 dev wlan12
 hostapd /root/psk/hostapd_other3.conf > /root/hostapd_other3.log & 
 
 

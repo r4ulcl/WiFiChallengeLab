@@ -30,7 +30,7 @@ sleep 15
 
 # WPA SUPPLICANT OUPUT TO FILE
 
-# MGT .0
+# MGT .5
 sudo wpa_supplicant -Dnl80211 -iwlan0 -c /root/mgtClient/wpa_mschapv2.conf > /root/wpa_supplicantMSCHAP.log & 
 sudo wpa_supplicant -Dnl80211 -iwlan1 -c /root/mgtClient/wpa_gtc.conf  > /root/wpa_supplicantGTC.log &
 
@@ -47,7 +47,7 @@ sudo wpa_supplicant -Dnl80211 -iwlan4 -c /root/pskClient/wpa_psk.conf > /root/wp
 sudo wpa_supplicant -Dnl80211 -iwlan5 -c /root/pskClient/wpa_psk_noAP.conf > /root/wpa_supplicantNoAP5.log &
 sudo wpa_supplicant -Dnl80211 -iwlan6 -c /root/pskClient/wpa_psk_noAP.conf > /root/wpa_supplicantNoAP6.log &
 
-# OPEN .1
+# OPEN .0
 sudo wpa_supplicant -Dnl80211 -iwlan7 -c /root/openClient/open_supplicant.conf > /root/wpa_supplicantOpen7.log &
 sudo wpa_supplicant -Dnl80211 -iwlan8 -c /root/openClient/open_supplicant.conf > /root/wpa_supplicantOpen8.log &
 sudo wpa_supplicant -Dnl80211 -iwlan9 -c /root/openClient/open_supplicant.conf > /root/wpa_supplicantOpen9.log &
