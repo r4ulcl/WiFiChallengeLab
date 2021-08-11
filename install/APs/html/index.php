@@ -50,7 +50,7 @@ if ($_SESSION["Username"]  == "admin") {
 
 
 
-if ($_SESSION["Username"]  == "CONTOSO\luis.da") {
+if ($_SESSION["Username"]  == "CONTOSOREG\luis.da") {
     echo "FLAG: F4G6$%2f2g4hs";
     echo "<br><br>";
     echo "Try default credentials";
