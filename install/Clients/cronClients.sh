@@ -20,10 +20,11 @@ do
 	dhclient wlan10
 
 	# MGT
-	curl -s 'http://192.168.0.1/login.php' --interface wlan0 --compressed -H 'Content-Type: application/x-www-form-urlencoded' -H 'Connection: keep-alive' -H 'Upgrade-Insecure-Requests: 1' --data-raw 'Username=CONTOSO%5Cjuan.tr&Password=Secret%21&Submit=Login' --cookie-jar /tmp/userjuan
-	curl -s 'http://192.168.0.1/login.php' --interface wlan1 --compressed -H 'Content-Type: application/x-www-form-urlencoded' -H 'Connection: keep-alive' -H 'Upgrade-Insecure-Requests: 1' --data-raw 'Username=CONTOSO%5CAdministrator&Password=SuperSecure%40%21%40&Submit=Login' --cookie-jar /tmp/userAdmin
+	curl -s 'http://192.168.5.1/login.php' --interface wlan0 --compressed -H 'Content-Type: application/x-www-form-urlencoded' -H 'Connection: keep-alive' -H 'Upgrade-Insecure-Requests: 1' --data-raw 'Username=CONTOSO%5Cjuan.tr&Password=Secret%21&Submit=Login' --cookie-jar /tmp/userjuan
+	curl -s 'http://192.168.5.1/login.php' --interface wlan1 --compressed -H 'Content-Type: application/x-www-form-urlencoded' -H 'Connection: keep-alive' -H 'Upgrade-Insecure-Requests: 1' --data-raw 'Username=CONTOSO%5CAdministrator&Password=SuperSecure%40%21%40&Submit=Login' --cookie-jar /tmp/userAdmin
 
-	curl -s 'http://192.168.0.1/login.php' --interface wlan10 --compressed -H 'Content-Type: application/x-www-form-urlencoded' -H 'Connection: keep-alive' -H 'Upgrade-Insecure-Requests: 1' --data-raw 'Username=CONTOSO%5Cluis.da&Password=u89gh68!6fcv56ed&Submit=Login' --cookie-jar /tmp/userluis
+	# MGT Relay
+	curl -s 'http://192.168.6.1/login.php' --interface wlan10 --compressed -H 'Content-Type: application/x-www-form-urlencoded' -H 'Connection: keep-alive' -H 'Upgrade-Insecure-Requests: 1' --data-raw 'Username=CONTOSOREG%5Cluis.da&Password=u89gh68!6fcv56ed&Submit=Login' --cookie-jar /tmp/userluis
 
 	# MGT TLS
 	curl -s 'http://192.168.7.1/login.php' --interface wlan2 --compressed -H 'Content-Type: application/x-www-form-urlencoded' -H 'Connection: keep-alive' -H 'Upgrade-Insecure-Requests: 1' --data-raw 'Username=GLOBAL%5CGlobalAdmin&Password=SuperSuperSecure%40%21%40&Submit=Login' --cookie-jar /tmp/userGlobal
@@ -44,8 +45,8 @@ do
 	curl -s 'http://10.10.1.1/login.php' --interface wlan6 --compressed -H 'Content-Type: application/x-www-form-urlencoded' -H 'Connection: keep-alive' -H 'Upgrade-Insecure-Requests: 1' --data-raw 'Username=anon1&Password=CRgwj5fZTo1cO6Y&Submit=Login' --cookie-jar /tmp/userAnon11
 
 	# OPEN
-	curl -s 'http://192.168.1.1/login.php' --interface wlan7 --compressed -H 'Content-Type: application/x-www-form-urlencoded' -H 'Connection: keep-alive' -H 'Upgrade-Insecure-Requests: 1' --data-raw 'Username=free1&Password=Jyl1iq8UajZ1fEK&Submit=Login' --cookie-jar /tmp/userFree1
-	curl -s 'http://192.168.1.1/login.php' --interface wlan8 --compressed -H 'Content-Type: application/x-www-form-urlencoded' -H 'Connection: keep-alive' -H 'Upgrade-Insecure-Requests: 1' --data-raw 'Username=free2&Password=5LqwwccmTg6C39y&Submit=Login' --cookie-jar /tmp/userFree2
-	curl -s 'http://192.168.1.1/login.php' --interface wlan9 --compressed -H 'Content-Type: application/x-www-form-urlencoded' -H 'Connection: keep-alive' -H 'Upgrade-Insecure-Requests: 1' --data-raw 'Username=free1&Password=Jyl1iq8UajZ1fEK&Submit=Login' --cookie-jar /tmp/userFree11
+	curl -s 'http://192.168.0.1/login.php' --interface wlan7 --compressed -H 'Content-Type: application/x-www-form-urlencoded' -H 'Connection: keep-alive' -H 'Upgrade-Insecure-Requests: 1' --data-raw 'Username=free1&Password=Jyl1iq8UajZ1fEK&Submit=Login' --cookie-jar /tmp/userFree1
+	curl -s 'http://192.168.0.1/login.php' --interface wlan8 --compressed -H 'Content-Type: application/x-www-form-urlencoded' -H 'Connection: keep-alive' -H 'Upgrade-Insecure-Requests: 1' --data-raw 'Username=free2&Password=5LqwwccmTg6C39y&Submit=Login' --cookie-jar /tmp/userFree2
+	curl -s 'http://192.168.0.1/login.php' --interface wlan9 --compressed -H 'Content-Type: application/x-www-form-urlencoded' -H 'Connection: keep-alive' -H 'Upgrade-Insecure-Requests: 1' --data-raw 'Username=free1&Password=Jyl1iq8UajZ1fEK&Submit=Login' --cookie-jar /tmp/userFree11
 
 done

@@ -21,7 +21,7 @@ if ($_SESSION["Username"]  == "CONTOSO\Administrator") {
 if ($_SESSION["Username"]  == "admin") {
 
 	
-	if (strpos($_SERVER['REMOTE_ADDR'], '192.168.10.') !== false) { //only MGT Relay	
+	if (strpos($_SERVER['REMOTE_ADDR'], '192.168.6.') !== false) { //only MGT Relay	
 		echo "<br><br>";
 		echo "<br><br>";
 		echo "AP CONFIG:";
@@ -38,9 +38,9 @@ if ($_SESSION["Username"]  == "admin") {
 		ssid=wifi-corp<br>
 		channel=1<br>";
 	    echo "Certificate Authority:  <a href=\"/secretCA/\"> http://", $_SERVER['REMOTE_ADDR'], "/secretCA/ </a>";
-	} elseif  (strpos($_SERVER['REMOTE_ADDR'], '192.168.8.') !== false) { //only HIDDEN
+	} elseif  (strpos($_SERVER['REMOTE_ADDR'], '192.168.1.') !== false) { //only HIDDEN
     		echo "FLAG: IkZ4ZeDqgfQ3eUU";
-	} elseif  (strpos($_SERVER['REMOTE_ADDR'], '192.168.9.') !== false) { //only WPS
+	} elseif  (strpos($_SERVER['REMOTE_ADDR'], '192.168.3.') !== false) { //only WPS
     		echo "FLAG: pRH6IlFp2OF49x2";
 	} else {
 	    echo "No FLAG, try logging in with another user ;)";

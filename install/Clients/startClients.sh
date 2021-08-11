@@ -59,6 +59,10 @@ ping 192.168.1.1 > /dev/nill &
 ping 192.168.2.1 > /dev/nill &
 ping 192.168.3.1 > /dev/nill &
 ping 192.168.4.1 > /dev/nill &
+ping 192.168.5.1 > /dev/nill &
+ping 192.168.6.1 > /dev/nill &
+ping 192.168.7.1 > /dev/nill &
+ping 192.168.8.1 > /dev/nill &
 
 bash /root/cronClients.sh > /root/cronClients.log &
 

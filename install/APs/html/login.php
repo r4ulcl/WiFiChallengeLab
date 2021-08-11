@@ -29,9 +29,45 @@ exit;
 /*Unsuccessful attempt: Set error message */$msg="<span style='color:red'>Invalid Login Details</span>";
 }
 }
-if (strpos($_SERVER['REMOTE_ADDR'], '192.168.0.') !== false) { //only MGT
+
+
+if (strpos($_SERVER['REMOTE_ADDR'], '192.168.0.') !== false) { //only OPEN
+  echo "<br><br>";
+  echo "Open Router Login";
+  echo "<br><br>";
+}
+
+if (strpos($_SERVER['REMOTE_ADDR'], '192.168.1.') !== false) { //only WEP
+  echo "<br><br>";
+  echo "WEP Router Login";
+  echo "<br><br>";
+}
+
+if (strpos($_SERVER['REMOTE_ADDR'], '192.168.2.') !== false) { //only PSK moviles
+  echo "<br><br>";
+  echo "PSK Router Login";
+  echo "<br><br>";
+}
+if (strpos($_SERVER['REMOTE_ADDR'], '192.168.3.') !== false) { //only WPS
+  echo "<br><br>";
+  echo "WPS Router Login";
+  echo "<br><br>";
+}
+if (strpos($_SERVER['REMOTE_ADDR'], '192.168.4.') !== false) { //only krack
+  echo "<br><br>";
+  echo "krack Router Login";
+  echo "<br><br>";
+}
+
+if (strpos($_SERVER['REMOTE_ADDR'], '192.168.5.') !== false) { //only MGT
   echo "<br><br>";
   echo "Corp Router Login";
+  echo "<br><br>";
+}
+
+if (strpos($_SERVER['REMOTE_ADDR'], '192.168.6.') !== false) { //only MGT Relay
+  echo "<br><br>";
+  echo "Regional Router Login";
   echo "<br><br>";
 }
 
@@ -41,23 +77,8 @@ if (strpos($_SERVER['REMOTE_ADDR'], '192.168.7.') !== false) { //only ENTERPRISE
   echo "<br><br>";
 }
 
-if (strpos($_SERVER['REMOTE_ADDR'], '192.168.1.') !== false) { //only OPEN
-  echo "<br><br>";
-  echo "Open Router Login";
-  echo "<br><br>";
-}
 
-if (strpos($_SERVER['REMOTE_ADDR'], '192.168.2.') !== false) { //only PSK moviles
-  echo "<br><br>";
-  echo "PSK Router Login";
-  echo "<br><br>";
-}
 
-if (strpos($_SERVER['REMOTE_ADDR'], '192.168.8.') !== false) { //only WEP
-  echo "<br><br>";
-  echo "WEP Router Login";
-  echo "<br><br>";
-}
 ?>
 
 <?php
@@ -75,7 +96,7 @@ if (strpos($_SERVER['REMOTE_ADDR'], '192.168.8.') !== false) { //only WEP
   }
 
   # Check IP from CONTOSOREG Relay
-  if (strpos($_SERVER['REMOTE_ADDR'], '192.168.10.') !== false){
+  if (strpos($_SERVER['REMOTE_ADDR'], '192.168.6.') !== false){
     session_start(); /* Starts the session */
     $Username = 'CONTOSOREG\luis.da';
     $Password = 'u89gh68!6fcv56ed';
