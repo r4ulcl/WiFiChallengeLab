@@ -3,7 +3,7 @@ date >> /root/date.log
 
 sleep 5
 
-sudo modprobe mac80211_hwsim radios=12
+sudo modprobe mac80211_hwsim radios=13
 
 
 macchanger -m 10:F9:6F:07:6C:00 wlan0
@@ -22,23 +22,31 @@ macchanger -m B0:72:BF:44:B0:99 wlan9
 
 macchanger -m 10:F9:6F:AC:53:10 wlan10
 
+macchanger -m 10:F9:6F:AC:53:11 wlan11
+macchanger -m 10:F9:6F:AC:53:12 wlan12
+
 sleep 5
 
 vwifi-client 10.0.2.15 > /root/vwifi-client.log &
 
 sleep 15
 
+bash /root/cronClients.sh > /root/cronClients.log &
+
+bash /root/checkVWIFI.sh > /root/checkVWIFI.log &
+
 # WPA SUPPLICANT OUPUT TO FILE
 
 # MGT .5
-sudo wpa_supplicant -Dnl80211 -iwlan0 -c /root/mgtClient/wpa_mschapv2.conf > /root/wpa_supplicantMSCHAP.log & 
-sudo wpa_supplicant -Dnl80211 -iwlan1 -c /root/mgtClient/wpa_gtc.conf  > /root/wpa_supplicantGTC.log &
+# Move to loop
+#sudo wpa_supplicant -Dnl80211 -iwlan0 -c /root/mgtClient/wpa_mschapv2.conf > /root/wpa_supplicantMSCHAP.log & 
+#sudo wpa_supplicant -Dnl80211 -iwlan1 -c /root/mgtClient/wpa_gtc.conf  > /root/wpa_supplicantGTC.log &
 
-sudo wpa_supplicant -Dnl80211 -iwlan10 -c /root/mgtClient/wpa_mschapv2_relay.conf > /root/wpa_supplicantMSCHAP_relay.log & 
+# MGT Reg .6
+#sudo wpa_supplicant -Dnl80211 -iwlan10 -c /root/mgtClient/wpa_mschapv2_relay.conf > /root/wpa_supplicantMSCHAP_relay.log & 
 
 # MGT client TLS .7
-sudo wpa_supplicant -Dnl80211 -iwlan2 -c /root/mgtClient/wpa_TLS.conf > /root/wpa_supplicantTLS.log &
-
+#sudo wpa_supplicant -Dnl80211 -iwlan2 -c /root/mgtClient/wpa_TLS.conf > /root/wpa_supplicantTLS.log &
 
 # PSK .2
 sudo wpa_supplicant -Dnl80211 -iwlan3 -c /root/pskClient/wpa_psk.conf > /root/wpa_supplicantPSK3.log &
@@ -52,7 +60,7 @@ sudo wpa_supplicant -Dnl80211 -iwlan7 -c /root/openClient/open_supplicant.conf >
 sudo wpa_supplicant -Dnl80211 -iwlan8 -c /root/openClient/open_supplicant.conf > /root/wpa_supplicantOpen8.log &
 sudo wpa_supplicant -Dnl80211 -iwlan9 -c /root/openClient/open_supplicant.conf > /root/wpa_supplicantOpen9.log &
 
-sleep 30
+sleep 10
 
 ping 192.168.0.1 > /dev/nill &
 ping 192.168.1.1 > /dev/nill &
@@ -64,8 +72,23 @@ ping 192.168.6.1 > /dev/nill &
 ping 192.168.7.1 > /dev/nill &
 ping 192.168.8.1 > /dev/nill &
 
-bash /root/cronClients.sh > /root/cronClients.log &
+sleep 10 && echo "ALL SET" &
 
-bash /root/checkVWIFI.sh > /root/checkVWIFI.log &
+# Delete logs to >> always
+rm /root/wpa_supplicantMSCHAP.log
+rm /root/wpa_supplicantGTC.log
 
-echo "ALL SET"
+while :
+do
+    # MGT .5
+    sudo timeout -k 1s 175s wpa_supplicant -Dnl80211 -iwlan0 -c /root/mgtClient/wpa_mschapv2.conf >> /root/wpa_supplicantMSCHAP.log & 
+    sudo timeout -k 1s 175s wpa_supplicant -Dnl80211 -iwlan1 -c /root/mgtClient/wpa_gtc.conf  >> /root/wpa_supplicantGTC.log &
+    # MGT Reg .6
+    sudo timeout -k 1s 175s  wpa_supplicant -Dnl80211 -iwlan10 -c /root/mgtClient/wpa_mschapv2_relay.conf > /root/wpa_supplicantMSCHAP_relay.log & 
+    # MGT client TLS .7
+    sudo timeout -k 1s 175s  wpa_supplicant -Dnl80211 -iwlan2 -c /root/mgtClient/wpa_TLS.conf > /root/wpa_supplicantTLS.log &
+
+    wait $!
+done
+
+

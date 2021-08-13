@@ -28,6 +28,18 @@ sudo apt update
 #	${USER}: user
 #	"$EUID": 0
 
+# Python
+
+curl -O https://www.python.org/ftp/python/3.8.2/Python-3.8.2.tar.xz
+tar -xf Python-3.8.2.tar.xz
+cd Python-3.8.2
+./configure --enable-optimizations
+make -j 4
+sudo make altinstall
+python3.8 --version
+
+
+# EAP_buster
 git clone https://github.com/blackarrowsec/EAP_buster
 
 #wifi_db

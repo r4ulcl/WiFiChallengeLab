@@ -61,3 +61,9 @@ export PATH=$PATH:/sbin
 #CRON
 #line="*/10 * * * * sh /root/cronClients.sh"
 #(crontab -u root -l; echo "$line" ) | crontab -u root -
+
+#Bug: soft lockup
+#https://www.suse.com/support/kb/doc/?id=000018705
+#echo "kernel.watchdog_thresh=20" > /etc/sysctl.d/99-watchdog_thresh.conf
+echo "kernel.watchdog_thresh=20" > /etc/sysctl.d/99-watchdog_thresh.conf
+sysctl -p  /etc/sysctl.d/99-watchdog_thresh.conf
