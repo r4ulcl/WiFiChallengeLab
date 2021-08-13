@@ -1,7 +1,7 @@
 #!/bin/bash
 
 apt update
-apt full-upgrade
+apt full-upgrade -y
 
 apt install -y dos2unix #remove CRLF
 
