@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Script to verify if the vwifi-client is connected to the HOST (using apache in HOST with logs)
+
 NUMLAST=0
 
 while :

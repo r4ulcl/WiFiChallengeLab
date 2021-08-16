@@ -36,17 +36,46 @@ bash /root/cronClients.sh > /root/cronClients.log &
 bash /root/checkVWIFI.sh > /root/checkVWIFI.log &
 
 # WPA SUPPLICANT OUPUT TO FILE
+# Reconnect to send the Identity and check certificate always
+
+# Delete logs to >> always
+rm /root/wpa_supplicantMSCHAP.log 2> /dev/nill
+rm /root/wpa_supplicantGTC.log 2> /dev/nill
+rm /root/wpa_supplicantMSCHAP_relay.log 2> /dev/nill
+rm /root/wpa_supplicantTLS.log 2> /dev/nill
 
 # MGT .5
-# Move to loop
-#sudo wpa_supplicant -Dnl80211 -iwlan0 -c /root/mgtClient/wpa_mschapv2.conf > /root/wpa_supplicantMSCHAP.log & 
-#sudo wpa_supplicant -Dnl80211 -iwlan1 -c /root/mgtClient/wpa_gtc.conf  > /root/wpa_supplicantGTC.log &
+while :
+do
+    TIMEOUT=$(( ( RANDOM % 150 )  + 150 ))
+    sudo timeout -k 1s ${TIMEOUT}s wpa_supplicant -Dnl80211 -iwlan0 -c /root/mgtClient/wpa_mschapv2.conf >> /root/wpa_supplicantMSCHAP.log &
+    wait $!
+done &
+
+while :
+do
+    TIMEOUT=$(( ( RANDOM % 150 )  + 150 ))
+    sudo timeout -k 1s ${TIMEOUT}s wpa_supplicant -Dnl80211 -iwlan1 -c /root/mgtClient/wpa_gtc.conf  >> /root/wpa_supplicantGTC.log &
+    wait $!
+done &
 
 # MGT Reg .6
-#sudo wpa_supplicant -Dnl80211 -iwlan10 -c /root/mgtClient/wpa_mschapv2_relay.conf > /root/wpa_supplicantMSCHAP_relay.log & 
+while :
+do
+    TIMEOUT=$(( ( RANDOM % 150 )  + 300 ))
+    sudo timeout -k 1s ${TIMEOUT}s  wpa_supplicant -Dnl80211 -iwlan10 -c /root/mgtClient/wpa_mschapv2_relay.conf >> /root/wpa_supplicantMSCHAP_relay.log &
+    wait $!
+done &
 
 # MGT client TLS .7
-#sudo wpa_supplicant -Dnl80211 -iwlan2 -c /root/mgtClient/wpa_TLS.conf > /root/wpa_supplicantTLS.log &
+while :
+do
+    TIMEOUT=$(( ( RANDOM % 150 )  + 300 ))
+    sudo timeout -k 1s ${TIMEOUT}s  wpa_supplicant -Dnl80211 -iwlan2 -c /root/mgtClient/wpa_TLS.conf >> /root/wpa_supplicantTLS.log &
+    wait $!
+done &
+# Wait for this ID at the end
+LAST=$!
 
 # PSK .2
 sudo wpa_supplicant -Dnl80211 -iwlan3 -c /root/pskClient/wpa_psk.conf > /root/wpa_supplicantPSK3.log &
@@ -74,21 +103,4 @@ ping 192.168.8.1 > /dev/nill &
 
 sleep 10 && echo "ALL SET" &
 
-# Delete logs to >> always
-rm /root/wpa_supplicantMSCHAP.log
-rm /root/wpa_supplicantGTC.log
-
-while :
-do
-    # MGT .5
-    sudo timeout -k 1s 175s wpa_supplicant -Dnl80211 -iwlan0 -c /root/mgtClient/wpa_mschapv2.conf >> /root/wpa_supplicantMSCHAP.log & 
-    sudo timeout -k 1s 175s wpa_supplicant -Dnl80211 -iwlan1 -c /root/mgtClient/wpa_gtc.conf  >> /root/wpa_supplicantGTC.log &
-    # MGT Reg .6
-    sudo timeout -k 1s 175s  wpa_supplicant -Dnl80211 -iwlan10 -c /root/mgtClient/wpa_mschapv2_relay.conf > /root/wpa_supplicantMSCHAP_relay.log & 
-    # MGT client TLS .7
-    sudo timeout -k 1s 175s  wpa_supplicant -Dnl80211 -iwlan2 -c /root/mgtClient/wpa_TLS.conf > /root/wpa_supplicantTLS.log &
-
-    wait $!
-done
-
-
+wait $LAST

@@ -69,6 +69,9 @@ hostapd /root/mgt/hostapd-wpe-relay.conf > /root/hostapd-wpe-relay.log &
 ip addr add 192.168.7.1/24 dev wlan7
 hostapd /root/mgt/hostapd-wpe-tls.conf > /root/hostapd-wpe-tls.log &
 
+#TODO
+#ip addr add 192.168.8.1/24 dev wlan8
+
 
 # PSK Other
 ip addr add 192.168.9.1/24 dev wlan9
