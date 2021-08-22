@@ -73,6 +73,7 @@ Virtualized WiFi pentesting laboratory without the need for physical WiFi cards,
     - "wifi-guest"
     - "wifi-moviles"
     - "wifi-corp"
+    - "wifi-regional"
     - "wifi-global"
     - "wifi-admin"
     - "wifi-oficina"
@@ -100,29 +101,30 @@ Run restartVM.sh in $HOME folder
 
 * * *
 
-## Solutions TODO
+## Walkthrough TODO
 
-- MarkDown
-- HTML
+- The Walkthrough will be available from January 1, 2022. 
+
+Please do not share or post any Walkthrough or challenge solutions until that date.
 
 * * *
 
 ## Manual create VM
 
-If you want to create the VM manually click [here](https://github.com/RaulCalvoLaorden/WifiLab/blob/main/install/README.md%22)
+If you want to create the VM manually click [here](https://github.com/RaulCalvoLaorden/WifiLab/blob/main/install/README.md)
 
 * * *
 
 ## TODO
 
 - [ ] Walkthrough
-- [ ] Upload VM
+- [x] Upload VM
 - [x] MGT TLS AP
 - [x] Client other WPA
 - [x] WPS
 - [x] HTTP Server with simple login
 - [x] AutoStart Vm in headless
-- [ ] Tools in /root/tools and ln -s to /home/user
+- [x] Tools in /root/tools and ln -s to /home/user
 - [x] WEP Web server with flag username ESSID, password WEP password
 - [x] Brute force MGT
 - [x] Web server different each AP (check IP)
@@ -131,4 +133,4 @@ If you want to create the VM manually click [here](https://github.com/RaulCalvoL
 - [ ] Decrypt WPA-EAP
 - [ ] Phishing RogueAP
 - [ ] Real captive portal in OPN
-- [ ] Fix CPU AMD
+- [ ] Fix CPU AMD (new snapshot?)
