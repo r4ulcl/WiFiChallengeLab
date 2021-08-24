@@ -10,7 +10,7 @@ find . -exec dos2unix {} \;
 cp startHost.sh /root/
 chmod +x /root/startHost.sh
 
-declare -a arr=("startVM.sh" "restartVM.sh" "stopVM.sh")
+declare -a arr=("restartVM.sh")
 for i in "${arr[@]}"
 do
 	chmod +x $i

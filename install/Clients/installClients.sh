@@ -17,7 +17,7 @@ cd ..
 cd /root
 wget -nH -r --no-parent http://10.0.2.15/certs
 
-# Download hostapd files wget
+# Download wpa_supplicant files wget
 cd /root
 wget -nH -r --no-parent http://10.0.2.15/Clients/pskClient/
 

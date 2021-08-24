@@ -5,19 +5,17 @@
 while :
 do
 	date
-	sleep 300
+	sleep 150
 
-	dhclient wlan0
-	dhclient wlan1
-	dhclient wlan2
-	dhclient wlan3
-	dhclient wlan4
-	dhclient wlan5
-	dhclient wlan6
-	dhclient wlan7
-	dhclient wlan8
-	dhclient wlan9
-	dhclient wlan10
+	for N in `seq 0 12`; do
+		dhclient wlan$N
+	done
+
+	sleep 150
+
+	for N in `seq 0 12`; do
+		dhclient wlan$N
+	done
 
 	# MGT
 	curl -s 'http://192.168.5.1/login.php' --interface wlan0 --compressed -H 'Content-Type: application/x-www-form-urlencoded' -H 'Connection: keep-alive' -H 'Upgrade-Insecure-Requests: 1' --data-raw 'Username=CONTOSO%5Cjuan.tr&Password=Secret%21&Submit=Login' --cookie-jar /tmp/userjuan

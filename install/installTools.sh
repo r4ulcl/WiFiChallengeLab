@@ -46,6 +46,7 @@ git clone https://github.com/blackarrowsec/EAP_buster
 #wifi_db
 cd $TOOLS
 sudo apt install python3-pip -y
+sudo apt install tshark -y
 git clone https://github.com/RaulCalvoLaorden/wifi_db
 cd wifi_db
 pip3 install -r requirements.txt 
@@ -178,3 +179,4 @@ pip2 install service_identity
 
 chown -R user $TOOLS
 ln -s $TOOLS /home/user/tools
+

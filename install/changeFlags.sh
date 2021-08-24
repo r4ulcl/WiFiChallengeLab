@@ -9,12 +9,12 @@ F3='wifi-oficina'
 F4='administracion'
 F5='MAC filtering'
 F6='Jyl1iq8UajZ1fEK'
-F7='NO'
-F81='1a2b3c4d5e'
-F82='1a:2b:3c:4d:5e'
+F71='1a2b3c4d5e'
+F72='1a:2b:3c:4d:5e'
 
-F9='starwars' 
-F10='192.168.2.0\/24'
+F8='starwars' 
+F9='192.168.2.0\/24'
+F10='OKRlcefknkCAI0yc547'
 F111='z39kTesr7hzgh9Y'
 F112='uTJTGWAbpnxb6uO'
 F12='password1'
@@ -37,17 +37,16 @@ find ./install/ -type f -exec sed -i "s/wifi-oficina/$F3/g" {} \;
 find ./install/ -type f -exec sed -i "s/administracion/$F4/g" {} \;
 find ./install/ -type f -exec sed -i "s/MAC filtering/$F5/g" {} \;
 find ./install/ -type f -exec sed -i "s/Jyl1iq8UajZ1fEK/$F6/g" {} \;
-#find ./install/ -type f -exec sed -i "s//$F7/g" {} \;
 #Client isolation
 #ap_isolate=1
-if [[ $F7 == "YES" ]]; then
-    echo 'ap_isolate=1' >> ./APs/open/hostapd_open.conf
-fi
-
-find ./install/ -type f -exec sed -i "s/1a2b3c4d5e/$F81/g" {} \;
-find ./install/ -type f -exec sed -i "s/1a:2b:3c:4d:5e/$F82/g" {} \;
-find ./install/ -type f -exec sed -i "s/starwars/$F9/g" {} \;
-find ./install/ -type f -exec sed -i "s/192.168.2.0\/24/$F10/g" {} \;
+#if [[ $F7 == "YES" ]]; then
+#   echo 'ap_isolate=1' >> ./APs/open/hostapd_open.conf
+#fi
+find ./install/ -type f -exec sed -i "s/1a2b3c4d5e/$F71/g" {} \;
+find ./install/ -type f -exec sed -i "s/1a:2b:3c:4d:5e/$F72/g" {} \;
+find ./install/ -type f -exec sed -i "s/starwars/$F8/g" {} \;
+find ./install/ -type f -exec sed -i "s/192.168.2.0\/24/$F9/g" {} \;
+find ./install/ -type f -exec sed -i "s/OKRlcefknkCAI0yc547/$F10/g" {} \;
 find ./install/ -type f -exec sed -i "s/z39kTesr7hzgh9Y/$F111/g" {} \;
 find ./install/ -type f -exec sed -i "s/uTJTGWAbpnxb6uO/$F112/g" {} \;
 find ./install/ -type f -exec sed -i "s/password1/$F12/g" {} \;

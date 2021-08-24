@@ -18,11 +18,11 @@ cd /root
 
 # Hostapd
 # https://github.com/aircrack-ng/aircrack-ng/tree/master/patches/wpe/hostapd-wpe
-wget https://raw.githubusercontent.com/aircrack-ng/aircrack-ng/master/patches/wpe/hostapd-wpe/hostapd-wpe.patch
+wget https://raw.githubusercontent.com/aircrack-ng/aircrack-ng/master/patches/wpe/hostapd-wpe/hostapd-2.9-wpe.patch
 wget https://w1.fi/releases/hostapd-2.9.tar.gz
 tar -zxf hostapd-2.9.tar.gz
 cd hostapd-2.9
-patch -p1 < ../hostapd-wpe.patch 
+patch -p1 < ../hostapd-2.9-wpe.patch
 cd hostapd
 
 make
@@ -75,7 +75,7 @@ server=8.8.8.8
 server=8.8.4.4
 
 dhcp-option=3 #Disable default router gateway
-#dhcp-option=6 # Disables DNS
+dhcp-option=6 # Disables DNS
 
 dhcp-host=wlan0,F0:9F:C2:71:22:00,192.168.0.1
 dhcp-range=192.168.0.2,192.168.0.100,24h
