@@ -22,22 +22,7 @@ if ($_SESSION["Username"]  == "admin") {
 
 	
 	if (strpos($_SERVER['REMOTE_ADDR'], '192.168.6.') !== false) { //only MGT Relay	
-		echo "<br><br>";
-		echo "<br><br>";
-		echo "AP CONFIG:";
-		echo "<br><br>";
-		echo "
-		eap_user_file=/root/mgt/hostapd-wpe.eap_user<br>
-		ca_cert=/root/mgt/certs/ca.crt<br>
-		server_cert=/root/mgt/certs/server.crt<br>
-		private_key=/root/mgt/certs/server.key<br>
-		private_key_passwd=whatever<br>
-		dh_file=/etc/hostapd-wpe/dh<br>
-<br>
-		# 802.11 Options<br>
-		ssid=wifi-corp<br>
-		channel=1<br>";
-	    echo "Certificate Authority:  <a href=\"/secretCA/\"> http://", $_SERVER['REMOTE_ADDR'], "/secretCA/ </a>";
+			echo "Hello";	
 	} elseif  (strpos($_SERVER['REMOTE_ADDR'], '192.168.1.') !== false) { //only HIDDEN
     		echo "FLAG: IkZ4ZeDqgfQ3eUU";
 	} elseif  (strpos($_SERVER['REMOTE_ADDR'], '192.168.3.') !== false) { //only WPS
@@ -49,11 +34,26 @@ if ($_SESSION["Username"]  == "admin") {
 }
 
 
-
+#relay user
 if ($_SESSION["Username"]  == "CONTOSOREG\luis.da") {
     echo "FLAG: F4G6$%2f2g4hs";
     echo "<br><br>";
-    echo "Try default credentials";
+    echo "<br><br>";
+		echo "<br><br>";
+		echo "AP CONFIG:";
+		echo "<br><br>";
+		echo "
+		eap_user_file=/root/mgt/hostapd-wpe.eap_user<br>
+		ca_cert=/root/mgt/certs/ca.crt<br>
+		server_cert=/root/mgt/certs/server.crt<br>
+		private_key=/root/mgt/certs/server.key<br>
+		private_key_passwd=whatever<br>
+		dh_file=/etc/hostapd-wpe/dh<br>
+		<br>
+		# 802.11 Options<br>
+		ssid=wifi-corp<br>
+		channel=1<br>";
+	    echo "Certificate Authority:  <a href=\"/secretCA/\"> http://", $_SERVER['REMOTE_ADDR'], "/secretCA/ </a>";
 }
 
 if ($_SESSION["Username"]  == "CONTOSO\juan.tr") {

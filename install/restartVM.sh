@@ -27,15 +27,15 @@ restartSnapshot(){
 
 export -f restartSnapshot
 
-kill airodump-ng
+killall airodump-ng
 
 USER=`whoami`
 if [[ $USER == 'user' ]]; then
         restartSnapshot "WifiLabAPs"
         restartSnapshot "WifiLabClients"
 else
-        su user -c "bash -c restartSnapshot 'WifiLabAPs'"
-        su user -c "bash -c restartSnapshot 'WifiLabClients'"
+        su user -c "bash -c 'restartSnapshot 'WifiLabAPs''"
+        su user -c "bash -c 'restartSnapshot 'WifiLabClients''"
 fi
 
 sleep 60 && killall airodump-ng &
