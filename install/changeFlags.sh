@@ -12,7 +12,7 @@ F6='Jyl1iq8UajZ1fEK'
 F71='1a2b3c4d5e'
 F72='1a:2b:3c:4d:5e'
 
-F8='starwars' 
+F8='starwars'
 F9='192.168.2.0\/24'
 F10='OKRlcefknkCAI0yc547'
 F111='z39kTesr7hzgh9Y'
@@ -23,45 +23,78 @@ F14='CONTOSO'
 F15='ca@WiFi.ca.es'
 #F16=''
 F17='Secret!'
-F18='secretCA'
-F19='SuperSecure@!@'
+F18='babygirl'
+F19='guest' #change other word
 F20='F4G6$%2f2g4hs'
-F21='babygirl'
-F22='guest'
+F21='secretCA'
+F22='SuperSecure@!@'
 F23='WnIlomDsedsOj5I5AQzG0ZoMIhmJIJeejksyma64'
 #F24=''
 
-find ./install/ -type f -exec sed -i "s/10:F9:6F:BA:18:22/$F1/g" {} \;
-find ./install/ -type f -exec sed -i "s/5220/$F2/g" {} \;
-find ./install/ -type f -exec sed -i "s/wifi-oficina/$F3/g" {} \;
-find ./install/ -type f -exec sed -i "s/administracion/$F4/g" {} \;
-find ./install/ -type f -exec sed -i "s/MAC filtering/$F5/g" {} \;
-find ./install/ -type f -exec sed -i "s/Jyl1iq8UajZ1fEK/$F6/g" {} \;
+find . -type f -exec sed -i "s/10:F9:6F:BA:18:22/$F1/g" {} \;
+find . -type f -exec sed -i "s/5220/$F2/g" {} \;
+find . -type f -exec sed -i "s/wifi-oficina/$F3/g" {} \;
+find . -type f -exec sed -i "s/administracion/$F4/g" {} \;
+find . -type f -exec sed -i "s/MAC filtering/$F5/g" {} \;
+find . -type f -exec sed -i "s/Jyl1iq8UajZ1fEK/$F6/g" {} \;
 #Client isolation
 #ap_isolate=1
 #if [[ $F7 == "YES" ]]; then
-#   echo 'ap_isolate=1' >> ./APs/open/hostapd_open.conf
+#   echo 'ap_isolate=1' >> .APs/open/hostapd_open.conf
 #fi
-find ./install/ -type f -exec sed -i "s/1a2b3c4d5e/$F71/g" {} \;
-find ./install/ -type f -exec sed -i "s/1a:2b:3c:4d:5e/$F72/g" {} \;
-find ./install/ -type f -exec sed -i "s/starwars/$F8/g" {} \;
-find ./install/ -type f -exec sed -i "s/192.168.2.0\/24/$F9/g" {} \;
-find ./install/ -type f -exec sed -i "s/OKRlcefknkCAI0yc547/$F10/g" {} \;
-find ./install/ -type f -exec sed -i "s/z39kTesr7hzgh9Y/$F111/g" {} \;
-find ./install/ -type f -exec sed -i "s/uTJTGWAbpnxb6uO/$F112/g" {} \;
-find ./install/ -type f -exec sed -i "s/password1/$F12/g" {} \;
-find ./install/ -type f -exec sed -i "s/UltraSecretP@ssword!_@#/$F13/g" {} \;
-find ./install/ -type f -exec sed -i "s/CONTOSO/$F14/g" {} \;
-find ./install/ -type f -exec sed -i "s/ca@WiFi.ca.es/$F15/g" {} \;
-#find ./install/ -type f -exec sed -i "s//$F16/g" {} \;
-find ./install/ -type f -exec sed -i "s/Secret!/$F17/g" {} \;
-find ./install/ -type f -exec sed -i "s/secretCA/$F18/g" {} \;
-find ./install/ -type f -exec sed -i "s/SuperSecure@!@/$F19/g" {} \;
-find ./install/ -type f -exec sed -i "s/F4G6$%2f2g4hs/$F20/g" {} \;
-find ./install/ -type f -exec sed -i "s/babygirl/$F21/g" {} \;
-find ./install/ -type f -exec sed -i "s/guest/$F22/g" {} \;
-find ./install/ -type f -exec sed -i "s/WnIlomDsedsOj5I5AQzG0ZoMIhmJIJeejksyma64/$F23/g" {} \;
-#find ./install/ -type f -exec sed -i "s//$F24/g" {} \;
+find . -type f -exec sed -i "s/1a2b3c4d5e/$F71/g" {} \;
+find . -type f -exec sed -i "s/1a:2b:3c:4d:5e/$F72/g" {} \;
+find . -type f -exec sed -i "s/starwars/$F8/g" {} \;
+find . -type f -exec sed -i "s/192.168.2.0\/24/$F9/g" {} \;
+find . -type f -exec sed -i "s/OKRlcefknkCAI0yc547/$F10/g" {} \;
+find . -type f -exec sed -i "s/z39kTesr7hzgh9Y/$F111/g" {} \;
+find . -type f -exec sed -i "s/uTJTGWAbpnxb6uO/$F112/g" {} \;
+find . -type f -exec sed -i "s/password1/$F12/g" {} \;
+find . -type f -exec sed -i "s/UltraSecretP@ssword!_@#/$F13/g" {} \;
+find . -type f -exec sed -i "s/CONTOSO/$F14/g" {} \;
+find . -type f -exec sed -i "s/ca@WiFi.ca.es/$F15/g" {} \;
+#find . -type f -exec sed -i "s//$F16/g" {} \;
+find . -type f -exec sed -i "s/Secret!/$F17/g" {} \;
+find . -type f -exec sed -i "s/babygirl/$F18/g" {} \;
+find . -type f -exec sed -i "s/guest/$F19/g" {} \;
+find . -type f -exec sed -i "s/F4G6$%2f2g4hs/$F20/g" {} \;
+find . -type f -exec sed -i "s/secretCA/$F21/g" {} \;
+find . -type f -exec sed -i "s/SuperSecure@!@/$F22/g" {} \;
+find . -type f -exec sed -i "s/WnIlomDsedsOj5I5AQzG0ZoMIhmJIJeejksyma64/$F23/g" {} \;
+#find . -type f -exec sed -i "s//$F24/g" {} \;
+
+# Change APs ESSID 
+OPN='wifi-invitados'
+
+WEP=$F4
+
+WPA='wifi-moviles'
+WPS='wifi-admin'
+OTHER0='MOVISTAR_JYG2'
+OTHER1='WIFI-JUAN'
+OTHER2='vodafone7123'
+OTHER3='MiFibra-5-D6G3'
+
+MGT='wifi-corp'
+RELAY='wifi-regional'
+TLS='wifi-global'
+
+
+sed -i "s/wifi-invitados/$OPN/g" ./APs/open/hostapd_open.conf
+
+sed -i "s/administracion/$WEP/g" ./APs/wep/hostapd_wep_hidden.conf
+
+sed -i "s/wifi-moviles/$WPA/g" ./APs/psk/hostapd_wpa.conf
+sed -i "s/wifi-admin/$WPS/g" ./APs/psk/hostapd_wps.conf
+sed -i "s/MOVISTAR_JYG2/$OTHER0/g" ./APs/psk/hostapd_other0.conf
+sed -i "s/WIFI-JUAN/$OTHER1/g" ./APs/psk/hostapd_other1.conf
+sed -i "s/vodafone7123/$OTHER2/g" ./APs/psk/hostapd_other2.conf
+sed -i "s/MiFibra-5-D6G3/$OTHER3/g" ./APs/psk/hostapd_other3.conf
+
+sed -i "s/wifi-corp/$MGT/g" ./APs/mgt/hostapd-wpe.conf
+sed -i "s/wifi-regional/$RELAY/g" ./APs/mgt/hostapd-wpe-relay.conf
+sed -i "s/wifi-global/$TLS/g" ./APs/mgt/hostapd-wpe-tls.conf
 
 cd certs
 bash createCert.sh
+cd ..
