@@ -24,7 +24,7 @@ F15='ca@WiFi.ca.es'
 #F16=''
 F17='Secret!'
 F18='babygirl'
-F19='guest' #change other word
+F19='oracle' #change other word
 F20='F4G6$%2f2g4hs'
 F21='secretCA'
 F22='SuperSecure@!@'
@@ -56,7 +56,7 @@ find . -type f -exec sed -i "s/ca@WiFi.ca.es/$F15/g" {} \;
 #find . -type f -exec sed -i "s//$F16/g" {} \;
 find . -type f -exec sed -i "s/Secret!/$F17/g" {} \;
 find . -type f -exec sed -i "s/babygirl/$F18/g" {} \;
-find . -type f -exec sed -i "s/guest/$F19/g" {} \;
+find . -type f -exec sed -i "s/oracle/$F19/g" {} \;
 find . -type f -exec sed -i "s/F4G6$%2f2g4hs/$F20/g" {} \;
 find . -type f -exec sed -i "s/secretCA/$F21/g" {} \;
 find . -type f -exec sed -i "s/SuperSecure@!@/$F22/g" {} \;
