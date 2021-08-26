@@ -1,5 +1,6 @@
 #!/bin/bash
 date >> /root/date.log
+echo 'nameserver 8.8.8.8' > /etc/resolv.conf
 
 sleep 5
 

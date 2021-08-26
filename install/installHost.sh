@@ -43,7 +43,20 @@ apt --fix-broken install -y
 
 
 # Dependencies
-apt install sudo iw macchanger aircrack-ng wireshark libcurl4-openssl-dev curl libz-dev module-assistant libssl-dev libnl-genl-3-dev libnl-3-dev pkg-config libsqlite3-dev git -y
+#Aircrack
+sudo apt-get install build-essential autoconf automake libtool pkg-config libnl-3-dev libnl-genl-3-dev libssl-dev libsqlite3-dev libpcre3-dev ethtool shtool rfkill zlib1g-dev libpcap-dev -y
+ wget https://download.aircrack-ng.org/aircrack-ng-1.6.tar.gz
+ tar -zxvf aircrack-ng-1.6.tar.gz
+ cd aircrack-ng-1.6
+ autoreconf -i
+ ./configure --with-experimental
+ make
+ make install
+ ldconfig
+
+
+
+apt install sudo iw macchanger wireshark libcurl4-openssl-dev curl libz-dev module-assistant libssl-dev libnl-genl-3-dev libnl-3-dev pkg-config libsqlite3-dev git -y
 apt install make g++ libnl-3-dev libnl-genl-3-dev -y
 apt install sl sqlitebrowser net-tools -y
 apt install hashcat -y
