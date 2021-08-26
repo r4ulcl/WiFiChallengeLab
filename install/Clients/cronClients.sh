@@ -5,16 +5,16 @@
 while :
 do
 	date
-	sleep 150
+	sleep 120
 
 	for N in `seq 0 12`; do
-		dhclient wlan$N
+		dhclient wlan$N &
 	done
 
 	sleep 150
 
 	for N in `seq 0 12`; do
-		dhclient wlan$N
+		dhclient wlan$N &
 	done
 
 	# MGT

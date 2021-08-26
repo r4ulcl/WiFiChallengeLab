@@ -53,7 +53,7 @@ if ($_SESSION["Username"]  == "CONTOSOREG\luis.da") {
 		# 802.11 Options<br>
 		ssid=wifi-corp<br>
 		channel=1<br>";
-	    echo "Certificate Authority:  <a href=\"/secretCA/\"> http://", $_SERVER['REMOTE_ADDR'], "/secretCA/ </a>";
+	    echo "Certificate Authority:  <a href=\"/secretCA/\"> http://", $_SERVER['SERVER_ADDR'], "/secretCA/ </a>";
 }
 
 if ($_SESSION["Username"]  == "CONTOSO\juan.tr") {

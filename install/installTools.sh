@@ -119,7 +119,7 @@ git clone https://github.com/sensepost/hostapd-mana
 cd hostapd-mana
 make -C hostapd -j 4
 
-sudo ln -s /root/hostapd-mana/hostapd/hostapd /usr/bin/hostapd-mana
+sudo ln -s /root/tools/hostapd-mana/hostapd/hostapd /usr/bin/hostapd-mana
 
 #eapeak
 cd $TOOLS
@@ -142,6 +142,7 @@ make
 sudo make install
 
 # wpa_sycophant
+cd $TOOLS
 git clone https://github.com/sensepost/wpa_sycophant
 cd wpa_sycophant/
 make -C wpa_supplicant -j 4
