@@ -165,6 +165,10 @@ touch /var/run/hostapd_wps_pin_requests
 
 service apache2 start
 
+#CRON
+#line="*/10 * * * * sh /root/cronAPs.sh"
+#(crontab -u root -l; echo "$line" ) | crontab -u root -
+
 #Bug: soft lockup
 #https://www.suse.com/support/kb/doc/?id=000018705
 #echo "kernel.watchdog_thresh=20" > /etc/sysctl.d/99-watchdog_thresh.conf

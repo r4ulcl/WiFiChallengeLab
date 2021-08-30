@@ -33,6 +33,7 @@ if ($_SESSION["Username"]  == "admin") {
 	}
 }
 
+#ALL: and strpos($_SERVER['REMOTE_ADDR'], '192.168.X.') !== false to only use users in each network
 
 #relay user
 if ($_SESSION["Username"]  == "CONTOSOREG\luis.da") {
