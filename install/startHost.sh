@@ -18,4 +18,21 @@ vwifi-server > /var/www/html/vwifi-server.log &
 ln -s /var/www/html/vwifi-server.log /root/vwifi-server.log
 service apache2 restart
 sleep 5
-nohup vwifi-spy &
+#nohup vwifi-spy &
+nohup vwifi-client 10.0.2.15 &
+
+rm  /root/vwifi-ctrl.log
+
+while :
+do
+    LS=`vwifi-ctrl ls`
+    CID=`echo "$LS" | grep -oP '\[\K[^\]]+'`
+    CID1=`echo $CID | cut -d " " -f1`
+    CID2=`echo $CID | cut -d " " -f2`
+    CID3=`echo $CID | cut -d " " -f3`
+    vwifi-ctrl set $CID1 10  0 0 >> /root/vwifi-ctrl.log
+    vwifi-ctrl set $CID2 -10  0 0 >> /root/vwifi-ctrl.log
+    vwifi-ctrl set $CID3 0  10 0 >> /root/vwifi-ctrl.log
+
+    sleep 10 
+done 
