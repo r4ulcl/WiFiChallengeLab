@@ -21,7 +21,9 @@ I've used "debian-10.9.0-amd64-netinst.iso"
 cd /root/
 git clone https://github.com/RaulCalvoLaorden/WifiLab
 cd WifiLab/install
-sh installHost.sh
+bash installHost.sh
+cd /root
+bash WifiLab/installTools.sh
 ```
 
 ## Web server on VM Host
@@ -53,6 +55,7 @@ bash installClients.sh
 - Dele history and instalation data from VM Host. 
 - Umount any disk from the VM
 - Check the name of the VM are the correct
+- Remove the USB 3.0 support
 
 
 # Installation code explanation

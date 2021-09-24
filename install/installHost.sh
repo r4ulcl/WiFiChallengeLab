@@ -37,23 +37,23 @@ mv debian-10.9.0-amd64-netinst.iso /home/user/
 #sudo apt install virtualbox-6.1 -y
 #wget https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-10.10.0-amd64-netinst.iso
 cd 
-wget https://download.virtualbox.org/virtualbox/6.1.22/virtualbox-6.1_6.1.22-144080~Debian~buster_amd64.deb
-sudo dpkg -i virtualbox-6.1_6.1.22-144080~Debian~buster_amd64.deb
+wget https://download.virtualbox.org/virtualbox/6.1.26/virtualbox-6.1_6.1.26-145957~Debian~bullseye_amd64.deb
+sudo dpkg -i virtualbox-*.deb
 apt --fix-broken install -y
 
 
 # Dependencies
 #Aircrack
-sudo apt-get install build-essential autoconf automake libtool pkg-config libnl-3-dev libnl-genl-3-dev libssl-dev libsqlite3-dev libpcre3-dev ethtool shtool rfkill zlib1g-dev libpcap-dev -y
- wget https://download.aircrack-ng.org/aircrack-ng-1.6.tar.gz
- tar -zxvf aircrack-ng-1.6.tar.gz
- cd aircrack-ng-1.6
- autoreconf -i
- ./configure --with-experimental
- make
- make install
- ldconfig
-
+#sudo apt-get install build-essential autoconf automake libtool pkg-config libnl-3-dev libnl-genl-3-dev libssl-dev libsqlite3-dev libpcre3-dev ethtool shtool rfkill zlib1g-dev libpcap-dev -y
+#wget https://download.aircrack-ng.org/aircrack-ng-1.6.tar.gz
+#tar -zxvf aircrack-ng-1.6.tar.gz
+#cd aircrack-ng-1.6
+#autoreconf -i
+#./configure --with-experimental
+#make
+#make install
+#ldconfig
+apt install aircrack-ng # Debian 11 best
 
 
 apt install sudo iw macchanger wireshark libcurl4-openssl-dev curl libz-dev module-assistant libssl-dev libnl-genl-3-dev libnl-3-dev pkg-config libsqlite3-dev git -y
@@ -76,7 +76,7 @@ cd ..
 echo '#!/bin/sh -e
 
 nohup /root/startHost.sh &
-bash /home/user/restartVM.sh
+sleep 30 && bash /home/user/restartVM.sh
 
 exit 0
 ' >>  /etc/rc.local

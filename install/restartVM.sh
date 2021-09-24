@@ -17,7 +17,7 @@ restartSnapshot(){
         echo "Starting $VM"
         vboxmanage startvm "$VM" --type headless
 
-        echo "Cheking $VM"
+        echo "Checking $VM"
         STATE=`vboxmanage showvminfo "$VM" |  grep State:`
         if echo "$STATE" | grep -E 'powered off|guru meditation' ; then
                 echo "VM powered off"
