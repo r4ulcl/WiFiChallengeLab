@@ -17,6 +17,8 @@ I've used "debian-10.9.0-amd64-netinst.iso"
 
 ## Host
 
+The host network must be 10.0.2.15/24, using NAT or a custom NAT Network and the internal VM use bridge. 
+
 ```bash
 cd /root/
 git clone https://github.com/RaulCalvoLaorden/WifiLab
@@ -38,12 +40,16 @@ python3 -m http.server 80
 
 ## APs VM
 
+Name: WifiLabAPs
+
 ```bash
 wget 10.0.2.15/APs/installAPs.sh
 bash installAP.sh
 ```
 
 ## Clients VM
+
+Name: WifiLabClients
 
 ```bash
 wget 10.0.2.15/Clients/installClients.sh

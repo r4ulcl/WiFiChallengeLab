@@ -38,6 +38,17 @@ exit 0
 ' >>  /etc/rc.local
 chmod 755 /etc/rc.local
 
+
+# SET IP
+echo '
+auto enp0s3 
+iface enp0s3 inet static
+  address 10.0.2.16 
+  netmask 255.255.255.0
+  gateway 10.0.2.2
+  dns-nameservers 8.8.8.8
+' >> /etc/network/interfaces
+
 cd /root
 wget 10.0.2.15/Clients/startClients.sh
 chmod +x /root/startClients.sh

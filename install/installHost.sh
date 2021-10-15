@@ -53,7 +53,7 @@ apt --fix-broken install -y
 #make
 #make install
 #ldconfig
-apt install aircrack-ng # Debian 11 best
+apt install aircrack-ng -y # Debian 11 best
 
 
 apt install sudo iw macchanger wireshark libcurl4-openssl-dev curl libz-dev module-assistant libssl-dev libnl-genl-3-dev libnl-3-dev pkg-config libsqlite3-dev git -y
@@ -81,6 +81,15 @@ sleep 30 && bash /home/user/restartVM.sh
 exit 0
 ' >>  /etc/rc.local
 chmod 755 /etc/rc.local
+
+echo '
+auto enp0s3 
+iface enp0s3 inet static
+  address 10.0.2.15
+  netmask 255.255.255.0
+  gateway 10.0.2.2
+  dns-nameservers 8.8.8.8
+' >> /etc/network/interfaces
 
 cd
 wget https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt

@@ -89,8 +89,7 @@ ip addr add 192.168.12.1/24 dev wlan12
 hostapd /root/psk/hostapd_other3.conf > /root/hostapd_other3.log & 
 
 
-
-
+ip addr del 10.0.2.15/24 dev enp0s3
 
 bash /root/checkVWIFI.sh > /root/checkVWIFI.log &
 

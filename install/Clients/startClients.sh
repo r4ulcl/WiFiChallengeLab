@@ -34,6 +34,7 @@ sleep 15
 
 bash /root/cronClients.sh > /root/cronClients.log &
 
+ip addr del 10.0.2.15/24 dev enp0s3
 bash /root/checkVWIFI.sh > /root/checkVWIFI.log &
 
 # WPA SUPPLICANT OUPUT TO FILE
@@ -95,12 +96,6 @@ sleep 10
 ping 192.168.0.1 > /dev/nill &
 ping 192.168.1.1 > /dev/nill &
 ping 192.168.2.1 > /dev/nill &
-ping 192.168.3.1 > /dev/nill &
-ping 192.168.4.1 > /dev/nill &
-ping 192.168.5.1 > /dev/nill &
-ping 192.168.6.1 > /dev/nill &
-ping 192.168.7.1 > /dev/nill &
-ping 192.168.8.1 > /dev/nill &
 
 sleep 10 && echo "ALL SET" &
 
