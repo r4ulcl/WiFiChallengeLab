@@ -73,7 +73,7 @@ Virtualized WiFi pentesting laboratory without the need for physical WiFi cards,
 - Enable nested VT-x / AMD-V on Virtualbox host if not enabled
 - Scope
     - "wifi-guest"
-    - "wifi-moviles"
+    - "wifi-mobile"
     - "wifi-corp"
     - "wifi-regional"
     - "wifi-global"

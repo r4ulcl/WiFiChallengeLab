@@ -64,11 +64,11 @@ find . -type f -exec sed -i "s/WnIlomDsedsOj5I5AQzG0ZoMIhmJIJeejksyma64/$F23/g" 
 #find . -type f -exec sed -i "s//$F24/g" {} \;
 
 # Change APs ESSID 
-OPN='wifi-invitados'
+OPN='wifi-guest'
 
 WEP=$F4
 
-WPA='wifi-moviles'
+WPA='wifi-mobile'
 WPS='wifi-admin'
 OTHER0='MOVISTAR_JYG2'
 OTHER1='WIFI-JUAN'
@@ -80,11 +80,11 @@ RELAY='wifi-regional'
 TLS='wifi-global'
 
 
-sed -i "s/wifi-invitados/$OPN/g" ./APs/open/hostapd_open.conf
+sed -i "s/wifi-guest/$OPN/g" ./APs/open/hostapd_open.conf
 
 sed -i "s/administracion/$WEP/g" ./APs/wep/hostapd_wep_hidden.conf
 
-sed -i "s/wifi-moviles/$WPA/g" ./APs/psk/hostapd_wpa.conf
+sed -i "s/wifi-mobile/$WPA/g" ./APs/psk/hostapd_wpa.conf
 sed -i "s/wifi-admin/$WPS/g" ./APs/psk/hostapd_wps.conf
 sed -i "s/MOVISTAR_JYG2/$OTHER0/g" ./APs/psk/hostapd_other0.conf
 sed -i "s/WIFI-JUAN/$OTHER1/g" ./APs/psk/hostapd_other1.conf
