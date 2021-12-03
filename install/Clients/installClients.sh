@@ -69,9 +69,9 @@ rm /var/www/html/index.html
 
 export PATH=$PATH:/sbin
 
-#CRON
-#line="*/10 * * * * sh /root/cronClients.sh"
-#(crontab -u root -l; echo "$line" ) | crontab -u root -
+# CRON
+line="*/2 * * * * sh /root/cronClients.sh"
+(crontab -u root -l; echo "$line" ) | crontab -u root -
 
 #Bug: soft lockup
 #https://www.suse.com/support/kb/doc/?id=000018705
