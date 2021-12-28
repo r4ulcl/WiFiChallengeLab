@@ -27,8 +27,9 @@ chmod 777 debian-10.9.0-amd64-netinst.iso
 mv debian-10.9.0-amd64-netinst.iso /home/user/
 
 # Install VBox guest additions
-#apt install build-essential dkms linux-headers-$(uname -r) -y
-#sh /media/cdrom/VBoxLinuxAdditions.run
+apt install build-essential dkms linux-headers-$(uname -r) -y
+mount /dev/cdrom /mnt
+sh /mnt/VBoxLinuxAdditions.run
 
 # Install virtualbox
 #wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
@@ -37,7 +38,7 @@ mv debian-10.9.0-amd64-netinst.iso /home/user/
 #sudo apt install virtualbox-6.1 -y
 #wget https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-10.10.0-amd64-netinst.iso
 cd 
-wget https://download.virtualbox.org/virtualbox/6.1.26/virtualbox-6.1_6.1.26-145957~Debian~bullseye_amd64.deb
+wget https://download.virtualbox.org/virtualbox/6.1.30/virtualbox-6.1_6.1.30-148432~Debian~bullseye_amd64.deb
 sudo dpkg -i virtualbox-*.deb
 apt --fix-broken install -y
 

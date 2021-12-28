@@ -14,7 +14,7 @@ if ($_SESSION["Username"]  == "GLOBAL\GlobalAdmin") {
     if (strpos($_SERVER['REMOTE_ADDR'], '192.168.7.') !== false) { //only TLS	
 		echo "FLAG: WnIlomDsedsOj5I5AQzG0ZoMIhmJIJeejksyma64";
 	} else {
-		echo "Your Princess Is in Another Castle!"
+		echo "Your Princess Is in Another Castle!";
 	}
 }
 
@@ -22,7 +22,7 @@ if ($_SESSION["Username"]  == "CONTOSO\Administrator") {
 	if (strpos($_SERVER['REMOTE_ADDR'], '192.168.5.') !== false) { //only TLS	
 		echo "FLAG: aY62tP67g5hK4f";
 	} else {
-		echo "Your Princess Is in Another Castle!"
+		echo "Your Princess Is in Another Castle!";
 	}
 }
 
@@ -49,7 +49,7 @@ if ($_SESSION["Username"]  == "CONTOSO\juan.tr") {
 		echo "<br><br>";
 		echo "Try default credentials";
 	} else {
-		echo "Your Princess Is in Another Castle!"
+		echo "Your Princess Is in Another Castle!";
 	}
 }
 
@@ -57,7 +57,7 @@ if ($_SESSION["Username"]  == "test1") {
 	if (strpos($_SERVER['REMOTE_ADDR'], '192.168.2.') !== false) { //only PSK	
 		echo "FLAG: uTJTGWAbpnxb6uO";
 	} else {
-		echo "Your Princess Is in Another Castle!"
+		echo "Your Princess Is in Another Castle!";
 	}
 }
 
@@ -65,7 +65,7 @@ if ($_SESSION["Username"]  == "test2") {
 	if (strpos($_SERVER['REMOTE_ADDR'], '192.168.2.') !== false) { //only PSK	
 		echo "FLAG: z39kTesr7hzgh9Y";
 	} else {
-		echo "Your Princess Is in Another Castle!"
+		echo "Your Princess Is in Another Castle!";
 	}
 }
 
@@ -73,7 +73,7 @@ if ($_SESSION["Username"]  == "free1") {
     if (strpos($_SERVER['REMOTE_ADDR'], '192.168.0.') !== false) { //only OPN	
 		echo "FLAG: CNq6gDIqLfjROhN";
 	} else {
-		echo "Your Princess Is in Another Castle!"
+		echo "Your Princess Is in Another Castle!";
 	}
 }
 
@@ -81,7 +81,7 @@ if ($_SESSION["Username"]  == "free2") {
 	if (strpos($_SERVER['REMOTE_ADDR'], '192.168.0.') !== false) { //only OPN	
 		echo "FLAG: Bo8JJqByJ2b6yc4";
 	} else {
-		echo "Your Princess Is in Another Castle!"
+		echo "Your Princess Is in Another Castle!";
 	}
 }
 
@@ -94,7 +94,7 @@ if ($_SESSION["Username"]  == "administrator") {
 	if (strpos($_SERVER['REMOTE_ADDR'], '192.168.1.') !== false) { //only MGT	
 		echo "FLAG: Ke4kKmkrRc3dV0k";
 	} else {
-		echo "Your Princess Is in Another Castle!"
+		echo "Your Princess Is in Another Castle!";
 	}
 }
 
