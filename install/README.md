@@ -38,7 +38,7 @@ sudo service apache2 stop
 python3 -m http.server 80
 ```
 
-## APs VM
+## APs VM (used 1.6G)
 
 Name: WifiLabAPs
 
@@ -47,7 +47,7 @@ wget 10.0.2.15/APs/installAPs.sh
 bash installAP.sh
 ```
 
-## Clients VM
+## Clients VM (used 1.4G)
 
 Name: WifiLabClients
 

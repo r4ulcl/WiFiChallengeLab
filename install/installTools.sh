@@ -43,6 +43,13 @@ python3.8 --version
 cd $TOOLS
 git clone https://github.com/blackarrowsec/EAP_buster
 
+#hcxtools
+git clone https://github.com/ZerBea/hcxtools.git
+cd hcxtools
+make 
+sudo make install
+cd ..
+
 #wifi_db
 cd $TOOLS
 sudo apt install python3-pip -y

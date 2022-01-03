@@ -13,7 +13,7 @@ ifconfig  enp0s3 10.0.2.15  netmask 255.255.255.0
 
 sudo modprobe vhost_vsock
 sudo chmod a+rw /dev/vhost-vsock
-sudo modprobe mac80211_hwsim radios=4
+sudo modprobe mac80211_hwsim radios=6
 vwifi-server > /var/www/html/vwifi-server.log &
 ln -s /var/www/html/vwifi-server.log /root/vwifi-server.log
 service apache2 restart
@@ -30,9 +30,9 @@ do
     CID1=`echo $CID | cut -d " " -f1`
     CID2=`echo $CID | cut -d " " -f2`
     CID3=`echo $CID | cut -d " " -f3`
-    vwifi-ctrl set $CID1 10  0 0 >> /root/vwifi-ctrl.log
-    vwifi-ctrl set $CID2 -10  0 0 >> /root/vwifi-ctrl.log
-    vwifi-ctrl set $CID3 0  10 0 >> /root/vwifi-ctrl.log
+    vwifi-ctrl set $CID1 5  0 0 >> /root/vwifi-ctrl.log
+    vwifi-ctrl set $CID2 -5  0 0 >> /root/vwifi-ctrl.log
+    vwifi-ctrl set $CID3 0  5 0 >> /root/vwifi-ctrl.log
 
     sleep 10 
 done 

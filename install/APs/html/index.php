@@ -47,7 +47,6 @@ if ($_SESSION["Username"]  == "CONTOSO\juan.tr") {
 	if (strpos($_SERVER['REMOTE_ADDR'], '192.168.5.') !== false) { //only MGT	
 		echo "FLAG: TY62tPV7Vh1hK1o";
 		echo "<br><br>";
-		echo "Try default credentials";
 	} else {
 		echo "Your Princess Is in Another Castle!";
 	}
@@ -91,7 +90,7 @@ if ($_SESSION["Username"]  == "anon1") {
 }
 
 if ($_SESSION["Username"]  == "administrator") {
-	if (strpos($_SERVER['REMOTE_ADDR'], '192.168.1.') !== false) { //only MGT	
+	if (strpos($_SERVER['REMOTE_ADDR'], '192.168.1.') !== false) { //only WEP	
 		echo "FLAG: Ke4kKmkrRc3dV0k";
 	} else {
 		echo "Your Princess Is in Another Castle!";
