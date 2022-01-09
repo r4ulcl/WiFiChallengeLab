@@ -62,7 +62,8 @@ bash installClients.sh
 - Umount any disk from the VM
 - Check the name of the VM are the correct
 - Remove the USB 3.0 support
-
+- Exec ```zerofree /dev/sda1``` in the VM and ``` VBoxManage modifyhd my.vdi –compact``` in the host 
+    - https://www.decodednode.com/2020/11/using-zerofree-to-reduce-ubuntudebian.html
 
 # Installation code explanation
 

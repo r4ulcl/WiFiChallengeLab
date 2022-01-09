@@ -49,14 +49,14 @@ rm /root/wpa_supplicantTLS.log 2> /dev/nill
 # MGT .5
 while :
 do
-    TIMEOUT=$(( ( RANDOM % 150 )  + 150 ))
+    TIMEOUT=$(( ( RANDOM % 120 )  + 60 ))
     sudo timeout -k 1s ${TIMEOUT}s wpa_supplicant -Dnl80211 -iwlan0 -c /root/mgtClient/wpa_mschapv2.conf >> /root/wpa_supplicantMSCHAP.log &
     wait $!
 done &
 
 while :
 do
-    TIMEOUT=$(( ( RANDOM % 150 )  + 150 ))
+    TIMEOUT=$(( ( RANDOM % 120 )  + 60 ))
     sudo timeout -k 1s ${TIMEOUT}s wpa_supplicant -Dnl80211 -iwlan1 -c /root/mgtClient/wpa_gtc.conf  >> /root/wpa_supplicantGTC.log &
     wait $!
 done &

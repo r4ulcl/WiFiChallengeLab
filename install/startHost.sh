@@ -26,7 +26,7 @@ rm  /root/vwifi-ctrl.log
 while :
 do
     LS=`vwifi-ctrl ls`
-    CID=`echo "$LS" | grep -oP '\[\K[^\]]+'`
+    CID=`echo "$LS" | awk '{print $1}'`
     CID1=`echo $CID | cut -d " " -f1`
     CID2=`echo $CID | cut -d " " -f2`
     CID3=`echo $CID | cut -d " " -f3`
