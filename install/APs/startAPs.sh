@@ -93,4 +93,8 @@ ip addr del 10.0.2.15/24 dev enp0s3
 
 bash /root/checkVWIFI.sh > /root/checkVWIFI.log &
 
+
+systemctl stop networking
 echo "ALL SET"
+
+ping 192.168.1.2 2> /dev/nil

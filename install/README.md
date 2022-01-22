@@ -1,10 +1,10 @@
 # Install all VMs
 
-I've used "debian-10.9.0-amd64-netinst.iso"
+I've used "debian-11.2.0-amd64-netinst.iso"
 
-- Your machine with VirtualBox
+- Your machine with VMWare
     
-    - VM Debian with VirtualBox (Install GUI)
+    - VM Debian with VMWare (Install GUI)
         - VM Debian AP: 'WifiLabAPs'
         - VM Debian clients: 'WifiLabClients'
 - Allow nest VT-x/AMD-v in the HOST VM
@@ -64,7 +64,9 @@ bash installClients.sh
 - Remove the USB 3.0 support
 - Exec ```zerofree /dev/sda1``` in the VM and ``` VBoxManage modifyhd my.vdi –compact``` in the host 
     - https://www.decodednode.com/2020/11/using-zerofree-to-reduce-ubuntudebian.html
-
+    - sudo e4defrag /
+    - dd if=/dev/zero of=wipefile bs=1M; sync; rm wipefile
+    - sudo vmware-toolbox-cmd disk shrinkonly
 # Installation code explanation
 
 ##  Generic
