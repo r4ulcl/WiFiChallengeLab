@@ -142,10 +142,14 @@ iface enp0s3 inet static
   dns-nameservers 8.8.8.8
 ' >> /etc/network/interfaces
 
+sed '/inet dhcp/d' /etc/network/interfaces -i
 
 cd /root
 wget 10.0.2.15/APs/startAPs.sh
 chmod +x /root/startAPs.sh
+
+wget 10.0.2.15/APs/cronAPs.sh
+chmod +x /root/cronAPs.sh
 
 cd /root
 wget 10.0.2.15/checkVWIFI.sh

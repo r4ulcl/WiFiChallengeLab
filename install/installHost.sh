@@ -1,5 +1,23 @@
 #!/bin/bash
 
+
+# Change all IPs (VBox, VMWARE, etc)
+GATEWAY=$(/sbin/ip route | awk '/default/ { print $3 }')
+
+if ip a | grep ens33 ; then
+	find . -type f -exec sed -i "s/enp0s3/ens33/g" {} \;
+	sed -i "s/ens33/enp0s3/g" APs/cronAP.sh
+	IP_MASK=$(/sbin/ip -o -4 addr list ens33 | awk '{print $4}' | cut -d/ -f1 | sed 's/\.[^.]*$//')
+else
+	IP_MASK=$(/sbin/ip -o -4 addr list enp0s3 | awk '{print $4}' | cut -d/ -f1 | sed 's/\.[^.]*$//')
+fi
+
+# Replace all 10.0.2.2 to ipMask (old default gateway) to the new one
+find . -type f -exec sed -i "s/10.0.2.2/$GATEWAY/g" {} \;
+
+# Replace all 10.0.2 to ipMask
+find . -type f -exec sed -i "s/10.0.2/$IP_MASK/g" {} \;
+
 apt update
 apt full-upgrade -y
 
@@ -27,7 +45,7 @@ chmod 777 debian-10.9.0-amd64-netinst.iso
 mv debian-10.9.0-amd64-netinst.iso /home/user/
 
 # Install VBox guest additions
-#apt install build-essential dkms linux-headers-$(uname -r) -y
+apt install build-essential dkms linux-headers-$(uname -r) -y
 #mount /dev/cdrom /mnt
 #sh /mnt/VBoxLinuxAdditions.run
 
@@ -41,6 +59,8 @@ cd
 wget https://download.virtualbox.org/virtualbox/6.1.30/virtualbox-6.1_6.1.30-148432~Debian~bullseye_amd64.deb
 sudo dpkg -i virtualbox-*.deb
 apt --fix-broken install -y
+
+sudo apt-get install open-vm-tools-desktop
 
 
 # Dependencies
@@ -91,6 +111,8 @@ iface enp0s3 inet static
   gateway 10.0.2.2
   dns-nameservers 8.8.8.8
 ' >> /etc/network/interfaces
+
+sed '/inet dhcp/d' /etc/network/interfaces -i
 
 cd
 wget https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt

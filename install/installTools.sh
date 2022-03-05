@@ -12,6 +12,7 @@ gpg --keyserver hkp://keys.gnupg.net --recv-key ED444FF07D8D0BF6
 gpg -a --export ED444FF07D8D0BF6 | sudo apt-key add -
 sudo apt update
 
+sudo apt install nmap -y
 
 # EAP Buster -> List auth methods WPA-EAP
 #sudo sh -c 'echo $USER' get user from sh
