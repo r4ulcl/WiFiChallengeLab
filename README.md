@@ -1,4 +1,4 @@
-# WifiLab
+# WiFiChallenge Lab
 
 ```
 
@@ -32,15 +32,9 @@ Virtualized WiFi pentesting laboratory without the need for physical WiFi cards,
     - [Manual create VM](#manual-create-vm)
     - [TODO](#todo)
 
-## Download OVA
+## OVA VMWare TODO
 
-#### OVA VirtualBox
-
-- [https://mega.nz/folder/rRAHiCbB#sYX\_JeqH5IOhZ\_WRPJnGmg/](https://mega.nz/folder/rRAHiCbB#sYX_JeqH5IOhZ_WRPJnGmg/)
-
-#### OVA VMWare TODO
-
-- URL TODO
+- https://drive.google.com/drive/folders/1LNRPPmOg-BfyoCeSdtudNjLXyvPraUdR?usp=sharing
 
 * * *
 
