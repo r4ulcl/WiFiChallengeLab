@@ -82,7 +82,7 @@ Virtualized WiFi pentesting laboratory without the need for physical WiFi cards,
     - "wifi-regional"
     - "wifi-global"
     - "wifi-admin"
-    - "wifi-oficina"
+    - "wifi-office"
     - Hidden network: &lt;length: 13&gt;
 
 * * *
@@ -151,4 +151,4 @@ If you want to create the VM manually click [here](https://github.com/RaulCalvoL
 - [ ] Decrypt WPA-EAP
 - [ ] Phishing RogueAP
 - [ ] Real captive portal in OPN
-- [ ] Fix CPU AMD (new snapshot)
+- [x] Fix CPU AMD (new snapshot)

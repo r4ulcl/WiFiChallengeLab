@@ -31,7 +31,7 @@ macchanger -r wlan13    # Other 4
 #macchanger -m 98:ab:c9:01:8d:e1 wlan12 # Other 4
 #macchanger -m 76:c4:de:29:5f:b9 wlan13 # Other 5
 
-vwifi-client 10.0.2.15  > /root/vwifi-client.log &
+vwifi-client 192.168.190.15  > /root/vwifi-client.log &
 
 sleep 10
 
@@ -89,12 +89,13 @@ ip addr add 192.168.12.1/24 dev wlan12
 hostapd /root/psk/hostapd_other3.conf > /root/hostapd_other3.log & 
 
 
-ip addr del 10.0.2.15/24 dev enp0s3
+ip addr del 192.168.190.15/24 dev enp0s3
 
 bash /root/checkVWIFI.sh > /root/checkVWIFI.log &
 
 
-systemctl stop networking
+#systemctl stop networking
 echo "ALL SET"
 
-ping 192.168.1.2 2> /dev/nil
+#Generate WEP traffic
+ping 192.168.1.2 > /dev/null 2>&1

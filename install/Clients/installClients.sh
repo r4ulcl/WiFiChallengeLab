@@ -15,17 +15,17 @@ sudo make install
 cd ..
 
 cd /root
-wget -nH -r --no-parent http://10.0.2.15/certs
+wget -nH -r --no-parent http://192.168.190.15/certs
 
 # Download wpa_supplicant files wget
 cd /root
-wget -nH -r --no-parent http://10.0.2.15/Clients/pskClient/
+wget -nH -r --no-parent http://192.168.190.15/Clients/pskClient/
 
 cd /root
-wget -nH -r --no-parent http://10.0.2.15/Clients/mgtClient/
+wget -nH -r --no-parent http://192.168.190.15/Clients/mgtClient/
 
 cd /root
-wget -nH -r --no-parent http://10.0.2.15/Clients/openClient/
+wget -nH -r --no-parent http://192.168.190.15/Clients/openClient/
 
 cp Clients/* . -r
 
@@ -43,26 +43,29 @@ chmod 755 /etc/rc.local
 echo '
 auto enp0s3 
 iface enp0s3 inet static
-  address 10.0.2.16 
+  address 192.168.190.16 
   netmask 255.255.255.0
-  gateway 10.0.2.2
+  gateway 192.168.190.2
   dns-nameservers 8.8.8.8
 ' >> /etc/network/interfaces
 
+sed '/inet dhcp/d' /etc/network/interfaces -i
+sed '/allow-hotplug enp0s3/d' /etc/network/interfaces -i
+
 cd /root
-wget 10.0.2.15/Clients/startClients.sh
+wget 192.168.190.15/Clients/startClients.sh
 chmod +x /root/startClients.sh
 
-wget 10.0.2.15/Clients/cronClients.sh
+wget 192.168.190.15/Clients/cronClients.sh
 chmod +x /root/cronClients.sh
 
 cd /root
-wget 10.0.2.15/checkVWIFI.sh
+wget 192.168.190.15/checkVWIFI.sh
 chmod +x /root/checkVWIFI.sh
 
 cd 
 rm -r /var/www/html
-wget -nH -r --no-parent http://10.0.2.15/Clients/html/
+wget -nH -r --no-parent http://192.168.190.15/Clients/html/
 cp -r Clients/html/ /var/www/
 chown -R www-data:www-data /var/www/html/
 rm /var/www/html/index.html

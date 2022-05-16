@@ -1,0 +1,105 @@
+id,name,description,connection_info,next_id,max_attempts,value,category,type,state,requirements
+1,01. List all client MACs,"(5 min - 10 min)
+
+List all client MACs and get the MAC of the wifi-global client
+
+In this challenge the Hints are free!
+
+The flag is the wifi-global client MAC",,2,10,50,1. Recon,standard,visible,
+2,02. Detect APs information,"(5 min - 10 min)
+
+Detect APs information 
+
+FLAG: wifi-corp channel ",,3,10,50,1. Recon,standard,visible,"{'prerequisites': [], 'anonymize': True}"
+3,03. Get probes from users,"(5 min - 10 min)
+
+Get the probes of client with MAC: 78:C1:A7:BF:72:66",,4,10,50,1. Recon,standard,visible,
+4,04. Find hidden network ESSID ,"(10 min - 20 min)
+
+Find hidden network ESSID (mac F0:9F:C2:71:22:11). 
+",,5,10,50,1. Recon,standard,visible,
+5,05. Access to wifi-guest network,"(10 min - 30 min)
+
+Access to wifi-guest network. 
+After connecting, what is the **bypassed security** mechanism to connect called? (With space and english)
+
+NOTE:  case insensitive
+",wifi-guest,6,100,100,2. Open,standard,visible,
+6,06. Login to the server with users password ,"(5 min - 10 min)
+
+Login to the server with users password. To do this, obtain the credentials of one of the free users and access the router. Write the FLAG.",wifi-guest,8,10,50,2. Open,standard,visible,"{'prerequisites': [5], 'anonymize': True}"
+7,10. Verify Client isolation ,"(5 min - 10 min)
+
+Verify Client isolation in AP wifi-mobile.
+
+Get flag from the other user's web server. ",wifi-mobile,11,10,100,4. PSK,standard,visible,"{'prerequisites': [9], 'anonymize': True}"
+8,07. Get hidden wifi password,"(25 min - 60 min)
+
+Get hidden wifi password.
+FLAG: Pass in hex
+
+WARNING: The ESSID is hidden",,9,10,150,3. WEP,standard,visible,{'prerequisites': [4]}
+9,08. Get wifi-mobile password,"(10 min - 20 min)
+
+Get wifi-mobile  password",wifi-mobile,10,10,100,4. PSK,standard,visible,
+10,09. Get users traffic passively,"(5 min - 10 min)
+
+Get wifi-moviles users traffic passively and get client subnet
+FLAG Example: 10.1.2.0/24",wifi-mobile,7,10,100,4. PSK,standard,visible,"{'prerequisites': [9], 'anonymize': True}"
+11,11. Login with stolen cookies,"(10 min - 30 min)
+
+Get wifi-moviles users traffic passively (802.11), decrypt and login with stolen cookies to wifi-moviles's AP router to get user FLAG. ",wifi-mobile,12,10,150,4. PSK,standard,visible,"{'prerequisites': [9], 'anonymize': True}"
+12,12. Get wifi-office AP Password,"(10 min - 30 min)
+
+Get wifi-office AP Password",wifi-office,13,10,200,4. PSK,standard,visible,
+13,13. Get wifi-admin AP password,"(10 min - 20 min)
+
+Get wifi-admin AP password",wifi-admin,14,10,150,4. PSK,standard,visible,
+14,14. Get users login IDs (usernames),"(5 min - 10 min)
+
+Get users login IDs (usernames) from wifi-corp clients. 
+FLAG: DOMAIN",wifi-corp,15,10,150,5. MGT,standard,visible,"{'prerequisites': [], 'anonymize': True}"
+15,15. Get cert information,"(5 min - 10 min)
+
+Get wifi-corp cert information. 
+FLAG: CA email address",wifi-corp,16,10,150,5. MGT,standard,visible,"{'prerequisites': [], 'anonymize': True}"
+16,16. Get EAP methods supported by AP,"(10 min - 20 min)
+
+Get EAP methods supported by AP
+FLAG: Only method supported by wifi-corp and wifi-global",wifi-corp/wifi-global,17,10,150,5. MGT,standard,visible,"{'prerequisites': [14], 'anonymize': True}"
+17,17. Get Juan user password of wifi-corp,"(15 min - 30 min)
+
+Get Juan's password (wifi-corp)",wifi-corp,22,10,300,5. MGT,standard,visible,"{'prerequisites': [14], 'anonymize': True}"
+19,21. Get CA from the Router using default creds ,"(5 min - 10 min)
+
+Get CA from the Router using default creds 
+FLAG: CA web folder name",,20,10,150,5. MGT,standard,visible,"{'prerequisites': [21], 'anonymize': True}"
+20,22. Get wifi-corp Administrator password using the CA,"(20 min - 40 min)
+
+Get the other wifi-corp USER (Administrator)  password using the CA",,24,10,400,5. MGT,standard,visible,"{'prerequisites': [14, 19], 'anonymize': True}"
+21,20. Connect to the network with Luis user without cracking their password,"(15 min - 30 min)
+
+Connect to the network wifi-regional with the Luis's account without cracking his password (it's impossible to crack). Then access Router and get the FLAG
+",wifi-regional,19,10,400,5. MGT,standard,visible,"{'prerequisites': [14], 'anonymize': True}"
+22,18. Brute force user test,"(10  min - 20 min)
+
+Brute force user CONTOSOLAB\test
+
+FLAG: Password",wifi-corp,23,10,200,5. MGT,standard,visible,"{'prerequisites': [14], 'anonymize': True}"
+23,19. Login with user with password 12345678,"(10 min - 20 min)
+
+Login with user with password 12345678 (is in top-usernames-shortlist.txt). 
+FLAG: Username",wifi-corp,21,10,200,5. MGT,standard,visible,"{'prerequisites': [], 'anonymize': True}"
+24,23. Login to wifi-global Administrator web creds,"(20 min - 40 min)
+
+Once we have the certificate, we can create a client certificate using:
+https://wiki.innovaphone.com/index.php?title=Howto:802.1X_EAP-TLS_With_FreeRadius
+
+Download the client certificate and connect to wifi-global with user GlobalAdmin to get FLAG from HTTP server",,28,10,1000,5. MGT,standard,visible,"{'prerequisites': [19], 'anonymize': True}"
+28,WiFiChallenge Lab feedback,"Please, rate the laboratory and write your comments in the following form.
+
+https://forms.gle/FHgAmBnPPLALVYSi9
+
+Thank you very much
+
+",https://forms.gle/FHgAmBnPPLALVYSi9,,0,100,Feedback,standard,visible,{'prerequisites': [21]}

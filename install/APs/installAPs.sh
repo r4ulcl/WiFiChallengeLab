@@ -16,22 +16,27 @@ sudo make install
 
 cd /root
 
-# Hostapd
+# Hostapd-wpe to debug
 # https://github.com/aircrack-ng/aircrack-ng/tree/master/patches/wpe/hostapd-wpe
-wget https://raw.githubusercontent.com/aircrack-ng/aircrack-ng/master/patches/wpe/hostapd-wpe/hostapd-2.9-wpe.patch
-wget https://w1.fi/releases/hostapd-2.9.tar.gz
-tar -zxf hostapd-2.9.tar.gz
-cd hostapd-2.9
-patch -p1 < ../hostapd-2.9-wpe.patch
+wget https://raw.githubusercontent.com/aircrack-ng/aircrack-ng/master/patches/wpe/hostapd-wpe/hostapd-2.10-wpe.patch
+wget https://w1.fi/releases/hostapd-2.10.tar.gz
+tar -zxf hostapd-2.10.tar.gz
+cd hostapd-2.10
+patch -p1 < ../hostapd-2.10-wpe.patch
 cd hostapd
 
 make
-make install 
+#make install 
 make wpe
+
 
 cd /etc/hostapd-wpe/certs
 ./bootstrap
 make install
+
+# Hostapd
+apt remove hostapd -y
+apt install hostapd -y
 
 # Hostapd 2.6 krackattacks
 cd /root
@@ -46,23 +51,23 @@ make
 
 # Hostapd config PSK!!
 cd /root
-wget -nH -r --no-parent http://10.0.2.15/APs/psk/
+wget -nH -r --no-parent http://192.168.190.15/APs/psk/
 
 # Open
 cd /root
-wget -nH -r --no-parent http://10.0.2.15/APs/open/
+wget -nH -r --no-parent http://192.168.190.15/APs/open/
 
 # WEP
 cd /root
-wget -nH -r --no-parent http://10.0.2.15/APs/wep/
+wget -nH -r --no-parent http://192.168.190.15/APs/wep/
 
 # MGT
 cd /root
-wget -nH -r --no-parent http://10.0.2.15/APs/mgt/
+wget -nH -r --no-parent http://192.168.190.15/APs/mgt/
 
 mkdir /root/mgt/
 cd /root/mgt/
-wget -nH -r --no-parent http://10.0.2.15/certs
+wget -nH -r --no-parent http://192.168.190.15/certs
 cd certs
 make install
 
@@ -134,32 +139,33 @@ exit 0
 chmod 755 /etc/rc.local
 
 echo '
-auto enp0s3 
+auto enp0s3
 iface enp0s3 inet static
-  address 10.0.2.14 
+  address 192.168.190.14 
   netmask 255.255.255.0
-  gateway 10.0.2.2
+  gateway 192.168.190.2
   dns-nameservers 8.8.8.8
 ' >> /etc/network/interfaces
 
 sed '/inet dhcp/d' /etc/network/interfaces -i
+sed '/allow-hotplug enp0s3/d' /etc/network/interfaces -i
 
 cd /root
-wget 10.0.2.15/APs/startAPs.sh
+wget 192.168.190.15/APs/startAPs.sh
 chmod +x /root/startAPs.sh
 
-wget 10.0.2.15/APs/cronAPs.sh
+wget 192.168.190.15/APs/cronAPs.sh
 chmod +x /root/cronAPs.sh
 
 cd /root
-wget 10.0.2.15/checkVWIFI.sh
+wget 192.168.190.15/checkVWIFI.sh
 chmod +x /root/checkVWIFI.sh
 
 export PATH=$PATH:/sbin
 
 cd 
 rm -r /var/www/html
-wget -nH -r --no-parent http://10.0.2.15/APs/html/
+wget -nH -r --no-parent http://192.168.190.15/APs/html/
 cp -r APs/html/ /var/www/
 
 # CA To web

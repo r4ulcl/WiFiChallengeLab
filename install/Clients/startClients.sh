@@ -28,13 +28,13 @@ macchanger -m 10:F9:6F:AC:53:12 wlan12
 
 sleep 5
 
-vwifi-client 10.0.2.15 > /root/vwifi-client.log &
+vwifi-client 192.168.190.15 > /root/vwifi-client.log &
 
 sleep 15
 
 bash /root/cronClients.sh > /root/cronClients.log &
 
-ip addr del 10.0.2.15/24 dev enp0s3
+ip addr del 192.168.190.15/24 dev enp0s3
 bash /root/checkVWIFI.sh > /root/checkVWIFI.log &
 
 # WPA SUPPLICANT OUPUT TO FILE

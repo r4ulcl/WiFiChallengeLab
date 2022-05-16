@@ -1,22 +1,6 @@
 #!/bin/bash
 
 
-# Change all IPs (VBox, VMWARE, etc)
-GATEWAY=$(/sbin/ip route | awk '/default/ { print $3 }')
-
-if ip a | grep ens33 ; then
-	find . -type f -exec sed -i "s/enp0s3/ens33/g" {} \;
-	sed -i "s/ens33/enp0s3/g" APs/cronAP.sh
-	IP_MASK=$(/sbin/ip -o -4 addr list ens33 | awk '{print $4}' | cut -d/ -f1 | sed 's/\.[^.]*$//')
-else
-	IP_MASK=$(/sbin/ip -o -4 addr list enp0s3 | awk '{print $4}' | cut -d/ -f1 | sed 's/\.[^.]*$//')
-fi
-
-# Replace all 10.0.2.2 to ipMask (old default gateway) to the new one
-find . -type f -exec sed -i "s/10.0.2.2/$GATEWAY/g" {} \;
-
-# Replace all 10.0.2 to ipMask
-find . -type f -exec sed -i "s/10.0.2/$IP_MASK/g" {} \;
 
 apt update
 apt full-upgrade -y
@@ -104,14 +88,15 @@ exit 0
 chmod 755 /etc/rc.local
 
 echo '
-auto enp0s3 
-iface enp0s3 inet static
-  address 10.0.2.15
+auto ens33 
+iface ens33 inet static
+  address 192.168.190.15
   netmask 255.255.255.0
-  gateway 10.0.2.2
+  gateway 192.168.190.2
   dns-nameservers 8.8.8.8
 ' >> /etc/network/interfaces
 
+sed '/allow-hotplug /d' /etc/network/interfaces -i
 sed '/inet dhcp/d' /etc/network/interfaces -i
 
 cd

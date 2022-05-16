@@ -78,11 +78,11 @@ pip3 install flask flask_cors flask_socketio pywebcopy
 #hostapd-wpe
 cd $TOOLS
 # https://github.com/aircrack-ng/aircrack-ng/tree/master/patches/wpe/hostapd-wpe
-wget https://raw.githubusercontent.com/aircrack-ng/aircrack-ng/master/patches/wpe/hostapd-wpe/hostapd-2.9-wpe.patch
-wget https://w1.fi/releases/hostapd-2.9.tar.gz
-tar -zxf hostapd-2.9.tar.gz
-cd hostapd-2.9
-patch -p1 < ../hostapd-2.9-wpe.patch
+wget https://raw.githubusercontent.com/aircrack-ng/aircrack-ng/master/patches/wpe/hostapd-wpe/hostapd-2.10-wpe.patch
+wget https://w1.fi/releases/hostapd-2.10.tar.gz
+tar -zxf hostapd-2.10.tar.gz
+cd hostapd-2.10
+patch -p1 < ../hostapd-2.10-wpe.patch
 cd hostapd
 
 make
@@ -116,6 +116,8 @@ cd $TOOLS
 git clone --depth 1 https://github.com/v1s1t0r1sh3r3/airgeddon.git
 cd airgeddon
 #sudo bash airgeddon.sh
+sudo apt install golang git build-essential libpcap-dev libusb-1.0-0-dev libnetfilter-queue-dev -y
+go get -u github.com/bettercap/bettercap
 
 
 #hostapd-mana

@@ -9,7 +9,7 @@ usermod -aG sudo user
 systemctl stop lighttpd
 service apache2 stop
 
-ifconfig  enp0s3 10.0.2.15  netmask 255.255.255.0 
+ifconfig  enp0s3 192.168.190.15  netmask 255.255.255.0 
 
 sudo modprobe vhost_vsock
 sudo chmod a+rw /dev/vhost-vsock
@@ -19,7 +19,7 @@ ln -s /var/www/html/vwifi-server.log /root/vwifi-server.log
 service apache2 restart
 sleep 5
 #nohup vwifi-spy &
-nohup vwifi-client 10.0.2.15 &
+nohup vwifi-client 192.168.190.15 &
 
 rm  /root/vwifi-ctrl.log
 

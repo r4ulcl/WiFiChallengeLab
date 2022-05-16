@@ -3,13 +3,13 @@
 
 # TODO New challenges order and TEST
 
-F1='10:F9:6F:8A:18:33'
-F2='5220'
+F1='10:F9:6F:8A:18:43'
+#F2='5220'
 F3='wifi-office'
-F4='administracion'
+F4='administration'
 F5='MAC filtering'
-F61='Jyl1iq8UajZ1fAK'
-F62='5LqwwccmTg6C38y'
+F61='CNq6gDIqLfjROhN'
+F62='Bo8JJqByJ2b6yc4'
 F71='1a2b3c4d5a'
 F72='1a:2b:3c:4d:5a'
 
@@ -18,7 +18,7 @@ F9='192.168.2.0\/24'
 F10='OKRlcefknkCAI0yc557'
 F111='z39kTesr7hzghaY'
 F112='uTJTGWAbpnxb6aO'
-F12='password1'
+F12='password2'
 F13='UltraSecret-P@ssword!_@#'
 F14='CONTOSOLAB'
 F15='ca@WiFiChallenge.ca.es'
@@ -33,8 +33,8 @@ F23='WnIlomDsedsOj5I5AQzG0ZoMIhmJIJeejksyma14'
 #F24=''
 
 find . -type f -exec sed -i "s/10:F9:6F:BA:18:22/$F1/g" {} \;
-find . -type f -exec sed -i "s/5220/$F2/g" {} \;
-find . -type f -exec sed -i "s/wifi-oficina/$F3/g" {} \;
+#find . -type f -exec sed -i "s/5220/$F2/g" {} \;
+find . -type f -exec sed -i "s/wifi-offices/$F3/g" {} \;
 find . -type f -exec sed -i "s/administracion/$F4/g" {} \;
 find . -type f -exec sed -i "s/MAC filtering/$F5/g" {} \;
 find . -type f -exec sed -i "s/Jyl1iq8UajZ1fEK/$F61/g" {} \;
@@ -46,7 +46,7 @@ find . -type f -exec sed -i "s/5LqwwccmTg6C39y/$F62/g" {} \;
 #fi
 find . -type f -exec sed -i "s/1a2b3c4d5e/$F71/g" {} \;
 find . -type f -exec sed -i "s/1a:2b:3c:4d:5e/$F72/g" {} \;
-find . -type f -exec sed -i "s/starwars/$F8/g" {} \;
+find . -type f -exec sed -i "s/star-wars/$F8/g" {} \;
 find . -type f -exec sed -i "s/192.168.2.0\/24/$F9/g" {} \;
 find . -type f -exec sed -i "s/OKRlcefknkCAI0yc547/$F10/g" {} \;
 find . -type f -exec sed -i "s/z39kTesr7hzgh9Y/$F111/g" {} \;

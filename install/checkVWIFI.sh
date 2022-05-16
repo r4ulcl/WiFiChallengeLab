@@ -12,12 +12,12 @@ do
 
 	#if last ID id is disconnected
 	#curl and grep ID 
-	DISC=`curl -s http://10.0.2.15/vwifi-server.log | grep $VID | tail -n 1`
+	DISC=`curl -s http://192.168.190.15/vwifi-server.log | grep $VID | tail -n 1`
 
 	if [[ $DISC == *"disconnected"* ]]; then
 		PID=`pgrep vwifi-client`
 		kill -9 $PID
-		vwifi-client 10.0.2.15  > /root/vwifi-client.log &
+		vwifi-client 192.168.190.15  > /root/vwifi-client.log &
 	fi
 
 	# loop each 10 secs
