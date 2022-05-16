@@ -15,12 +15,23 @@
 
 Virtualized WiFi pentesting laboratory without the need for physical WiFi cards, using mac80211_hwsim and [vwifi](https://github.com/Raizo62/vwifi) proyect.
 
-The competitive CTF began on March 11 and ends on May 15, 2022. Then the laboratory will continue to be active but giving less points.
+The competitive CTF began on March 11 and ended on May 15, 2022. Now the lab is still active but giving less points since the solutions have been published.
+
+## Access WiFiChallenge Lab
+
+To access the CTFd server [click here](https://wifichallengelab.com/)
+
+
+## Manual create VM
+If you want to create the VM manually [click here](https://github.com/RaulCalvoLaorden/WiFiChallengeLab/tree/main/install)
+
+
 
 ## VM System Requirements
 - 4 gb de RAM (6gb recommended)
 - 4 CPUs
 - Virtualize Intel VT-x/EPT or AMD-V/RVI enabled
+
 
 ## Download VMDK for VMWare only
 
