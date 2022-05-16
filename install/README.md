@@ -21,7 +21,7 @@ The host network must be 192.168.190.15/24, using NAT or a custom NAT Network an
 
 ```bash
 cd /root/
-git clone https://github.com/RaulCalvoLaorden/WifiLab
+git clone https://github.com/RaulCalvoLaorden/WiFiChallengeLab
 cd WifiLab/install
 bash installHost.sh
 cd /root
