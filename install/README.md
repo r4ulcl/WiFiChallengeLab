@@ -26,6 +26,8 @@ cd WifiLab/install
 bash installHost.sh
 cd /root
 bash WifiLab/installTools.sh
+# If you want to modify the flags you can edit and exec changeFlags.sh
+# bash changeFlags.sh
 ```
 
 ## Web server on VM Host
