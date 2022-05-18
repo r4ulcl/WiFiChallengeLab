@@ -39,12 +39,6 @@ If you want to create the VM manually [click here](https://github.com/RaulCalvoL
 
 * * *
 
-## Telegram channel
-
-- [WiFiChallenge Lab Telegram Channel ](https://t.me/+xn6oahuS9hJlODU0)
-
-* * *
-
 ## VMDK Usage
 
 - Download VMDK from mega
