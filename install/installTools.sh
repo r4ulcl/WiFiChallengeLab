@@ -8,36 +8,14 @@ TOOLS=$FOLDER/tools
 #echo 'deb http://http.kali.org/kali kali-rolling main contrib non-free
 #deb http://old.kali.org/kali moto main non-free contrib
 #' >> /etc/apt/sources.list.d/kali.list
-gpg --keyserver hkp://keys.gnupg.net --recv-key ED444FF07D8D0BF6
-gpg -a --export ED444FF07D8D0BF6 | sudo apt-key add -
-sudo apt update
+#gpg --keyserver hkp://keys.gnupg.net --recv-key ED444FF07D8D0BF6
+#gpg -a --export ED444FF07D8D0BF6 | sudo apt-key add -
+#sudo apt update
 
 sudo apt install nmap -y
 
-# EAP Buster -> List auth methods WPA-EAP
-#sudo sh -c 'echo $USER' get user from sh
-# if [ "$EUID" -ne 0 ]
-#user@host:~$ bash test.sh 
-#	${USER}: user
-#	"$EUID": 1000
-#user@host:~$ sudo bash test.sh 
-#	${USER}: root
-#	"$EUID": 0
-#user@host:~$ su
-#Password: 
-#root@host:/home/user# bash test.sh 
-#	${USER}: user
-#	"$EUID": 0
-
 # Python
-cd $TOOLS
-curl -O https://www.python.org/ftp/python/3.8.2/Python-3.8.2.tar.xz
-tar -xf Python-3.8.2.tar.xz
-cd Python-3.8.2
-./configure --enable-optimizations
-make -j 4
-sudo make altinstall
-python3.8 --version
+sudo apt install -y python3 
 
 
 # EAP_buster
@@ -101,12 +79,6 @@ cd $TOOLS
 git clone https://github.com/Snizz/crEAP
 #Arp-scan
 apt install arp-scan -y
-
-
-
-
-
-
 
 
 #airgeddon
