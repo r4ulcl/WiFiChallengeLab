@@ -1,6 +1,6 @@
 # WiFiChallenge Lab
 
-⛔ [DEPRECATED] Active v2.0 at [https://github.com/lgandx/Responder](https://github.com/r4ulcl/WiFiChallengeLab-docker)
+⛔ [DEPRECATED] Active v2.0 at [https://github.com/r4ulcl/WiFiChallengeLab-docker](https://github.com/r4ulcl/WiFiChallengeLab-docker)
 
 
 ```
